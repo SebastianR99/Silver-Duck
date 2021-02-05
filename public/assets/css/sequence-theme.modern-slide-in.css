@@ -155,7 +155,8 @@ html,
 
 .seq .seq-next {
   right: 20px;
-  background: url("../img/slider/bt-next.png");*/
+  background: url("../img/slider/bt-next.png");
+
 }
 
 .seq .seq-next:focus,
@@ -167,7 +168,7 @@ html,
 
 .seq .seq-prev {
   left: 20px;
-  /*background: url("../img/slider/bt-prev.png");*/
+  background: url("../img/slider/bt-prev.png");
 }
 
 .seq .seq-prev:focus,
