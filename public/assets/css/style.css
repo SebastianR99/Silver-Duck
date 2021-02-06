@@ -821,7 +821,7 @@ img {
   text-align: center;
 }
 #aa-slider .aa-slider-area .seq-title span {
-  background-color: #fff;  
+  background-color: rgba(255, 255, 255, 0.6);
   display: inline-block;
   padding: 6px 15px;
   text-transform: uppercase;
@@ -4184,3 +4184,7 @@ img {
   }
 }
 
+.texto-borde {
+  -webkit-text-stroke: 1px black;
+  color: white; 
+}

@@ -208,32 +208,20 @@
               <div class="seq-title">
                <span data-seq>Save Up to 75% Off</span>                
                 <h2 data-seq>Men Collection</h2>                
-                <p data-seq>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, illum.</p>
-                <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
+                <p data-seq>Lo nuevo y más reciente para caballero.</p>
+                <a data-seq href="{{ url('/Men/product-men') }}" class="aa-shop-now-btn aa-secondary-btn">Comprar ahora</a>
               </div>
             </li>
             <!-- single slide item -->
             <li>
               <div class="seq-model">
-                <img data-seq src=" {{ url('/assets/img/slider/2.jpg') }}" alt="Wristwatch slide img" />
+                <img data-seq src=" {{ url('/assets/img/slider/2.jpeg') }}" alt="Women slide img" />
               </div>
               <div class="seq-title">
                 <span data-seq>Save Up to 40% Off</span>                
-                <h2 data-seq>Wristwatch Collection</h2>                
-                <p data-seq>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, illum.</p>
-                <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
-              </div>
-            </li>
-            <!-- single slide item -->
-            <li>
-              <div class="seq-model">
-                <img data-seq src=" {{ url('/assets/img/slider/3.jpg') }}" alt="Women Jeans slide img" />
-              </div>
-              <div class="seq-title">
-                <span data-seq>Save Up to 75% Off</span>                
-                <h2 data-seq>Jeans Collection</h2>                
-                <p data-seq>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, illum.</p>
-                <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
+                <h2 data-seq>Women Collection</h2>                
+                <p data-seq>Todo lo que neceistas para tus outfits en toda ocasión.</p>
+                <a data-seq href="{{ url('/Women/product-women') }}" class="aa-shop-now-btn aa-secondary-btn">Comprar ahora</a>
               </div>
             </li>
             <!-- single slide item -->           
@@ -243,9 +231,9 @@
               </div>
               <div class="seq-title">
                 <span data-seq>Save Up to 75% Off</span>                
-                <h2 data-seq>Exclusive Shoes</h2>                
-                <p data-seq>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, illum.</p>
-                <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
+                <h2 style="font-size: 38px;" data-seq>Colección masculina formal </h2>                
+                <p data-seq>Verse bien nunca pasa de moda.</p>
+                <a data-seq href="{{ url('/Men/product-men-formal') }}" class="aa-shop-now-btn aa-secondary-btn">Comprar ahora</a>
               </div>
             </li>
             <!-- single slide item -->  
@@ -255,9 +243,9 @@
               </div>
               <div class="seq-title">
                 <span data-seq>Save Up to 50% Off</span>                
-                <h2 data-seq>Best Collection</h2>                
-                <p data-seq>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, illum.</p>
-                <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
+                <h2 style="font-size: 38px;" data-seq>Colección femenina casual</h2>                
+                <p data-seq>Siéntete tranquila, relajada y casual.</p>
+                <a data-seq href="{{ url('/Women/product-women-casual') }}" class="aa-shop-now-btn aa-secondary-btn">Comprar ahora</a>
               </div>
             </li>                   
           </ul>
