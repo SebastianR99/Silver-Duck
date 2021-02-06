@@ -19,7 +19,8 @@ class CreateProductsTable extends Migration
             $table->string('product_price');
             $table->boolean('product_avail')->default(true);
             $table->integer('product_stock');
-            $table->string('product_desc');
+            $table->string('product_desc_short');
+            $table->string('product_desc_long');
             $table->string('product_size');
             $table->string('product_color');
             $table->string('product_pic1');

@@ -70,10 +70,9 @@
               <!-- / header top left -->
               <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
-                  <li><a href="account.html">My Account</a></li>
+                  <li><a href="account.html">Mi cuenta</a></li>
                   <li class="hidden-xs"><a href="wishlist.html">Wishlist</a></li>
                   <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
-                  <li><a href="" data-toggle="modal" data-target="#login-modal">Register</a></li>
                 </ul>
               </div>
             </div>
@@ -84,6 +83,7 @@
     <!-- / header top  -->
 
     <!-- start header bottom  -->
+    
     <div class="aa-header-bottom">
       <div class="container">
         <div class="row">
@@ -92,19 +92,19 @@
               <!-- logo  -->
               <div class="aa-logo">
                 <!-- Text based logo -->
-                <a href="index.html">
+                <a href="{{ url('/') }}"><img style="max-width: 80px; max-height: 80px;" src="https://i.imgur.com/9DZp1Vf.png" alt="logo img">
+                <a href="{{ url('/') }}">
                   <span class="fa fa-shopping-cart"></span>
-                  <p>Silver<strong>Duck</strong> <span>Your Shopping Partner</span></p>
+                  <p>Silver<strong>Duck</strong> <span>Tu compañero de compras</span></p>
                 </a>
                 <!-- img based logo -->
-                <!-- <a href="index.html"><img src=" {{ url('/assets/img/logo.jpg') }}" alt="logo img"></a> -->
               </div>
               <!-- / logo  -->
                <!-- cart box -->
               <div class="aa-cartbox">
                 <a class="aa-cart-link" href="#">
                   <span class="fa fa-shopping-basket"></span>
-                  <span class="aa-cart-title">SHOPPING CART</span>
+                  <span class="aa-cart-title">CARRITO DE COMPRAS</span>
                   <span class="aa-cart-notify">2</span>
                 </a>
                 <div class="aa-cartbox-summary">
@@ -112,7 +112,7 @@
                     <li>
                       <a class="aa-cartbox-img" href="#"><img src=" {{ url('/assets/img/woman-small-2.jpg') }}" alt="img"></a>
                       <div class="aa-cartbox-info">
-                        <h4><a href="#">Product Name</a></h4>
+                        <h4><a href="#">Nombre del producto</a></h4>
                         <p>1 x $250</p>
                       </div>
                       <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
@@ -120,7 +120,7 @@
                     <li>
                       <a class="aa-cartbox-img" href="#"><img src=" {{ url('/assets/img/woman-small-1.jpg') }}" alt="img"></a>
                       <div class="aa-cartbox-info">
-                        <h4><a href="#">Product Name</a></h4>
+                        <h4><a href="#">Nombre del producto</a></h4>
                         <p>1 x $250</p>
                       </div>
                       <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
@@ -171,22 +171,22 @@
           <div class="navbar-collapse collapse">
             <!-- Left nav -->
             <ul class="nav navbar-nav">
-              <li><a href="index.html">Inicio</a></li>
-              <li><a href="#"> Hombre <span class="caret"></span></a>
+              <li><a href="{{ url('/') }}">Inicio</a></li>
+              <li><a href="{{ url('/Men/product-men') }}"> Hombre <span class="caret"></span></a>
                 <ul class="dropdown-menu">                
-                  <li><a href="#">Casual</a></li>
-                  <li><a href="#">Deportivo</a></li>
-                  <li><a href="#">Formal</a></li>
+                  <li><a href="{{ url('/Men/product-men-casual') }}">Casual</a></li>
+                  <li><a href="{{ url('/Men/product-men-sport') }}">Deportivo</a></li>
+                  <li><a href="{{ url('/Men/product-men-formal') }}">Formal</a></li>
                 </ul>
               </li>
-              <li><a href="#"> Mujer <span class="caret"></span></a>
+              <li><a href="{{ url('/Women/product-women') }}"> Mujer <span class="caret"></span></a>
                 <ul class="dropdown-menu">  
-                  <li><a href="#">Casual</a></li>
-                  <li><a href="#">Deportivo</a></li>
-                  <li><a href="#">Formal</a></li>
+                  <li><a href="{{ url('/Women/product-women-casual') }}">Casual</a></li>
+                  <li><a href="{{ url('/Women/product-women-sport') }}">Deportivo</a></li>
+                  <li><a href="{{ url('/Women/product-women-formal') }}">Formal</a></li>
                 </ul>
               </li>
-              <li><a href="contact.html">Contacto</a></li>
+              <li><a href="{{ url('/contact') }}">Contacto</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -1704,42 +1704,13 @@
             <div class="row">
               <div class="col-md-3 col-sm-6">
                 <div class="aa-footer-widget">
-                  <h3>Main Menu</h3>
+                  <h3>Menú Principal</h3>
                   <ul class="aa-footer-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Our Services</a></li>
+                    <li><a href="{{ url('/') }}">Inicio</a></li>
                     <li><a href="#">Our Products</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="{{ url('/about') }}">Sobre nosotros</a></li>
+                    <li><a href="{{ url('/contact') }}">Contact Us</a></li>
                   </ul>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6">
-                <div class="aa-footer-widget">
-                  <div class="aa-footer-widget">
-                    <h3>Knowledge Base</h3>
-                    <ul class="aa-footer-nav">
-                      <li><a href="#">Delivery</a></li>
-                      <li><a href="#">Returns</a></li>
-                      <li><a href="#">Services</a></li>
-                      <li><a href="#">Discount</a></li>
-                      <li><a href="#">Special Offer</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6">
-                <div class="aa-footer-widget">
-                  <div class="aa-footer-widget">
-                    <h3>Useful Links</h3>
-                    <ul class="aa-footer-nav">
-                      <li><a href="#">Site Map</a></li>
-                      <li><a href="#">Search</a></li>
-                      <li><a href="#">Advanced Search</a></li>
-                      <li><a href="#">Suppliers</a></li>
-                      <li><a href="#">FAQ</a></li>
-                    </ul>
-                  </div>
                 </div>
               </div>
               <div class="col-md-3 col-sm-6">
