@@ -13,8 +13,8 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('Users', function (Blueprint $table) {
-            $table->increments('user_id');
+        Schema::create('users', function (Blueprint $table) {
+            $table->bigIncrements('user_id');
             $table->string('user_name');
             $table->string('user_email')->unique();
             $table->string('user_password');
@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('user_city');
             $table->string('user_address');
             $table->string('user_phone');
+            $table->foreignId('user_list')->references('list_id')->on('wishlist');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -34,6 +35,8 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('users', function (Blueprint $table){
+            $table->dropForeign('users_user_list_foreign');
+        });
     }
 }

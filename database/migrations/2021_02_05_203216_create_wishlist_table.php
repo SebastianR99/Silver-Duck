@@ -14,7 +14,8 @@ class CreateWishlistTable extends Migration
     public function up()
     {
         Schema::create('wishlist', function (Blueprint $table) {
-            $table->increments('list_id');
+            $table->bigIncrements('list_id');
+            $table->foreignId('list_product')->references('product_id')->on('products');
             $table->timestamps();
         });
     }
@@ -26,6 +27,8 @@ class CreateWishlistTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wishlist');
+        Schema::dropIfExists('wishlist', function (Blueprint $table){
+            $table->dropForeign('wishlist_list_product_foreign');
+        });
     }
 }
