@@ -8,35 +8,56 @@ use App\Models\Products;
 class CatalogController extends Controller
 {
     public function getProductMen(){
-        $products = Products::All();
+        $products = Products::where('product_genre', 'male')
+                            ->get();
         return view('Men.product-men', array('arrayProducts'=>$products));
     }
     //
     public function getProductMenCasual(){
-        return view('Men.product-men-casual');
+        $products = Products::where('product_genre', 'male')
+                            ->where('product_type', 'casual')
+                            ->get();
+        return view('Men.product-men-casual', array('arrayProducts'=>$products));
     }
     //
     public function getProductMenSport(){
-        return view('Men.product-men-sport');
+        $products = Products::where('product_genre','male')
+                            ->where('product_type','sport')
+                            ->get();
+        return view('Men.product-men-sport', array('arrayProducts'=>$products));
     }
     //
     public function getProductMenFormal(){
-        return view('Men.product-men-formal');
+        $products = Products::where('product_genre','male')
+                            ->where('product_type', 'formal')
+                            ->get();
+        return view('Men.product-men-formal', array('arrayProducts'=>$products));
     }
     //
     public function getProductWomen(){
-        return view('Women.product-women');
+        $products = Products::where('product_genre', 'female')
+                            ->get();
+        return view('Women.product-women', array('arrayProducts'=>$products));
     }
     //
     public function getProductWomenCasual(){
-        return view('Women.product-women-casual');
+        $products = Products::where('product_genre', 'female')
+                            ->where('product_type', 'casual')
+                            ->get();
+        return view('Women.product-women-casual', array('arrayProducts'=>$products));
     }
     //
     public function getProductWomenSport(){
-        return view('Women.product-women-sport');
+        $products = Products::where('product_genre', 'female')
+                            ->where('product_type', 'sport')
+                            ->get();
+        return view('Women.product-women-sport', array('arrayProducts'=>$products));
     }
     //
     public function getProductWomenFormal(){
-        return view('Women.product-women-formal');
+        $products = Products::where('product_genre', 'female')
+                            ->where('product_type', 'formal')
+                            ->get();
+        return view('Women.product-women-formal', array('arrayProducts'=>$products));
     }
 }

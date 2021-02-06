@@ -387,30 +387,20 @@
             </div>
             <!-- single sidebar -->
             <div class="aa-sidebar-widget">
-              <h3>Recently Views</h3>
+              <h3>Más populares</h3>
               <div class="aa-recently-views">
                 <ul>
-                  <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
-                    <div class="aa-cartbox-info">
-                      <h4><a href="#">Product Name</a></h4>
-                      <p>1 x $250</p>
-                    </div>                    
-                  </li>
-                  <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-1.jpg"></a>
-                    <div class="aa-cartbox-info">
-                      <h4><a href="#">Product Name</a></h4>
-                      <p>1 x $250</p>
-                    </div>                    
-                  </li>
-                   <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
-                    <div class="aa-cartbox-info">
-                      <h4><a href="#">Product Name</a></h4>
-                      <p>1 x $250</p>
-                    </div>                    
-                  </li>                                      
+                  @foreach ($arrayProducts as $key => $products)
+                    @if ($products->product_stock <= 3)
+                      <li>
+                        <a href="#" class="aa-cartbox-img"><img alt="img" src="{{ $products->product_pic1 }}"></a>
+                        <div class="aa-cartbox-info">
+                          <h4><a href="#"> {{ $products->product_name }} </a></h4>
+                         <p> {{ $products->product_price }} </p>
+                        </div>                    
+                      </li>       
+                    @endif
+                  @endforeach                               
                 </ul>
               </div>                            
             </div>
