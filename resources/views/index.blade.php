@@ -1537,39 +1537,42 @@
               <!-- single slide -->
               <li>
                 <div class="aa-testimonial-single">
-                <img class="aa-testimonial-img" src="{{ url('/assets/img/testimonial-img-2.jpg') }}" alt="testimonial img">
+                <img class="aa-testimonial-img" src="{{ url('/assets/img/testimonial-img-1.jpg') }}" alt="testimonial img">
                   <span class="fa fa-quote-left aa-testimonial-quote"></span>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui!consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui.</p>
+                  <p>Me encanta la página web de Silver Duck, es bastante intuitiva y sencilla de utilizar. Siempre que puedo o
+                    tengo un antojo, utilizo Silver Duck para comprar todo lo que necesito.
+                  </p>
                   <div class="aa-testimonial-info">
-                    <p>Allison</p>
-                    <span>Designer</span>
-                    <a href="#">Dribble.com</a>
+                    <p>Carlos</p>
+                    <span>Diseñador Gráfico</span>
                   </div>
                 </div>
               </li>
               <!-- single slide -->
               <li>
                 <div class="aa-testimonial-single">
-                <img class="aa-testimonial-img" src="img/testimonial-img-1.jpg') }}" alt="testimonial img">
+                <img class="aa-testimonial-img" src="{{ url('/assets/img/testimonial-img-3.jpg') }}" alt="testimonial img">
                   <span class="fa fa-quote-left aa-testimonial-quote"></span>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui!consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui.</p>
+                  <p>Recomiendo totalmente la página de Silver Duck. No sólo te mantiene a la vanguardia de la moda, sino que también
+                    me es sencila de utilizar y eso hace que quiera seguir comprando cada que puedo.
+                  </p>
                   <div class="aa-testimonial-info">
-                    <p>KEVIN MEYER</p>
-                    <span>CEO</span>
-                    <a href="#">Alphabet</a>
+                    <p>Steven Tyler</p>
+                    <span>Cantante - Compositor - Actor</span>
                   </div>
                 </div>
               </li>
                <!-- single slide -->
               <li>
                 <div class="aa-testimonial-single">
-                <img class="aa-testimonial-img" src="img/testimonial-img-3.jpg') }}" alt="testimonial img">
+                <img class="aa-testimonial-img" src="{{ url('/assets/img/testimonial-img-2.jpg') }}" alt="testimonial img">
                   <span class="fa fa-quote-left aa-testimonial-quote"></span>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui!consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui.</p>
+                  <p>Si buscas perfección en el diccionario, al lado aparece un screen de la página de Silver Duck. Creo que con
+                    eso resumo todo lo buena que es.
+                  </p>
                   <div class="aa-testimonial-info">
-                    <p>Luner</p>
-                    <span>COO</span>
-                    <a href="#">Kinatic Solution</a>
+                    <p>Maluma</p>
+                    <span>Pretty boy, Dirty Boy</span>
                   </div>
                 </div>
               </li>
