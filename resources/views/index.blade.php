@@ -172,6 +172,7 @@
             <!-- Left nav -->
             <ul class="nav navbar-nav">
               <li><a href="{{ url('/') }}">Inicio</a></li>
+              <li><a href="{{ url('/product') }}">Catálogo completo</a></li>
               <li><a href="{{ url('/Men/product-men') }}"> Hombre <span class="caret"></span></a>
                 <ul class="dropdown-menu">                
                   <li><a href="{{ url('/Men/product-men-casual') }}">Casual</a></li>
@@ -1501,24 +1502,26 @@
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="aa-support-single">
                 <span class="fa fa-truck"></span>
-                <h4>FREE SHIPPING</h4>
-                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
+                <h4>NUEVOS DESCUENTOS</h4>
+                <P>Nuevos descuentos en diversos artículos cada semana.</P>
               </div>
             </div>
             <!-- single support -->
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="aa-support-single">
                 <span class="fa fa-clock-o"></span>
-                <h4>30 DAYS MONEY BACK</h4>
-                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
+                <h4>30 DÍAS DE GARANTÍA</h4>
+                <P>Si si producto no llega en condiciones óptimas o no es como lo esperaba,
+                  puede regresarlo.
+                </P>
               </div>
             </div>
             <!-- single support -->
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="aa-support-single">
                 <span class="fa fa-phone"></span>
-                <h4>SUPPORT 24/7</h4>
-                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
+                <h4>SOPORTE 24/7</h4>
+                <P>Estamos disponibles a cualquier momento para atenderlos.</P>
               </div>
             </div>
           </div>

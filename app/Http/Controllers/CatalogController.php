@@ -7,6 +7,11 @@ use App\Models\Products;
 
 class CatalogController extends Controller
 {
+    public function getProduct(){
+        $products = Products::All();
+        return view('product', array('arrayProducts'=>$products));
+    }
+    //
     public function getProductMen(){
         $products = Products::where('product_genre', 'male')
                             ->get();

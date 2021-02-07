@@ -17,6 +17,8 @@ use App\Http\Controllers\CatalogController;
 
 Route::get('/', [HomeController::class, 'getHome'] );
 //
+Route::get('/product', [CatalogController::class, 'getProduct']);
+//
 Route::get('/Men/product-men', [CatalogController::class, 'getProductMen']);
 //
 Route::get('/Men/product-men-casual', [CatalogController::class, 'getProductMenCasual']);
