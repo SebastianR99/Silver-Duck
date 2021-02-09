@@ -195,7 +195,7 @@
  
   <!-- catg header banner section -->
   <section id="aa-catg-head-banner">
-   <img src="{{ url('/assets/img/fashion/fashion-header-bg-1.jpg') }}" alt="fashion img">
+   <img style="max-width: 900px; max-height: 300px;" src="{{ url('/assets/img/fashion/fashion-header-bg-1.jpg') }}" alt="fashion img">
    <div class="aa-catg-head-banner-area">
      <div class="container">
       <div class="aa-catg-head-banner-content">

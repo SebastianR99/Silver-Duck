@@ -195,11 +195,11 @@
  
   <!-- catg header banner section -->
   <section id="aa-catg-head-banner">
-   <img src="{{ url('/assets/img/fashion/fashion-header-bg-8.jpg') }}" alt="fashion img">
+   <img src="{{ url('/assets/img/fashion/fashion-header-bg-men-formal.jpg') }}" alt="fashion img">
    <div class="aa-catg-head-banner-area">
      <div class="container">
       <div class="aa-catg-head-banner-content">
-        <h2>Fashion</h2>
+        <h2>Formal</h2>
         <ol class="breadcrumb">
           <li><a href="{{ url('/') }}">Inicio</a></li>         
           <li class="active">Hombre</li>

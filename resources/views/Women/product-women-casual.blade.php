@@ -195,14 +195,14 @@
  
   <!-- catg header banner section -->
   <section id="aa-catg-head-banner">
-   <img src="{{ url('/assets/img/fashion/fashion-header-bg-men.jpg') }}" alt="fashion img">
+   <img src="{{ url('/assets/img/fashion/fashion-header-bg-women-casual.jpg') }}" alt="fashion img">
    <div class="aa-catg-head-banner-area">
      <div class="container">
       <div class="aa-catg-head-banner-content">
-        <h2>Todo para hombre</h2>
+        <h2>Casual</h2>
         <ol class="breadcrumb">
           <li><a href="{{ url('/') }}">Inicio</a></li>         
-          <li class="active">Hombre</li>
+          <li class="active">Mujer</li>
         </ol>
       </div>
      </div>
@@ -237,24 +237,27 @@
               <ul class="aa-product-catg">
                 <!-- start single product item -->
                 @foreach ($arrayProducts as $key => $products)
-                  <li>
-                    <figure>
-                     <a class="" href="#"><img style="width: 90% fit-content; height: 90%;" src="{{$products->product_pic1}}" alt="polo shirt img"></a>
-                     <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                      <figcaption>
-                       <h4 class="aa-product-title"><a href="#">{{ $products->product_name }}</a></h4>
-                       <span class="aa-product-price">{{ $products->product_price }}</span>
-                        <p class="aa-product-descrip">{{ $products->product_desc_short }}</p>
-                     </figcaption>
-                    </figure>                         
-                    <div class="aa-product-hvr-content">
-                     <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                      <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                      <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
-                   </div>
+                  @if ($products->product_type === "casual")
+                    <li>
+                      <figure>
+                        <a class="" href="#"><img style="width: 90% fit-content; height: 90%;" src="{{$products->product_pic1}}" alt="polo shirt img"></a>
+                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                        <figcaption>
+                          <h4 class="aa-product-title"><a href="#">{{ $products->product_name }}</a></h4>
+                          <span class="aa-product-price">{{ $products->product_price }}</span>
+                          <p class="aa-product-descrip">{{ $products->product_desc_short }}</p>
+                        </figcaption>
+                      </figure>                         
+                      <div class="aa-product-hvr-content">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
+                      </div>
                    <!-- product badge -->
-                    <span class="aa-badge aa-sale" href="#">SALE!</span>
-                 </li>
+                      <span class="aa-badge aa-sale" href="#">SALE!</span>
+                    </li>
+                  @endif
+                  
                 @endforeach                                          
               </ul>
               <!-- quick view modal -->                  
