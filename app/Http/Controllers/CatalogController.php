@@ -65,4 +65,14 @@ class CatalogController extends Controller
                             ->get();
         return view('Women.product-women-formal', array('arrayProducts'=>$products));
     }
+    //
+    public function getCart(){
+        //$products = Products::All();
+        return view('cart'/*, array('arrayProducts'=>$products)*/);
+    }
+    //
+    public function getCheckout(){
+        //$products = Products::All();
+        return view('checkout'/*, array('arrayProducts'=>$products)*/);
+    }
 }

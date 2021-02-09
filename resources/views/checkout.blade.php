@@ -7,19 +7,19 @@
     <title>SilverDuck | Checkout</title>
     
   <!-- Font awesome -->
-  <link href="{{ url('public/assets/fonts/font-awesome.css') }}" rel="stylesheet">
+  <link href="{{ url('/assets/fonts/font-awesome.css') }}" rel="stylesheet">
   <!-- Bootstrap -->
-  <link href="{{ url('public/assets/css/bootstrap.css') }}" rel="stylesheet">   
+  <link href="{{ url('/assets/css/bootstrap.css') }}" rel="stylesheet">   
   <!-- SmartMenus jQuery Bootstrap Addon CSS -->
-  <link href="{{ url('public/assets/css/jquery.smartmenus.bootstrap.css') }}" rel="stylesheet">
+  <link href="{{ url('/assets/css/jquery.smartmenus.bootstrap.css') }}" rel="stylesheet">
   <!-- Product view slider -->
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets/css/jquery.simpleLens.css') }}">    
+  <link rel="stylesheet" type="text/css" href="{{ url('/assets/css/jquery.simpleLens.css') }}">    
   <!-- slick slider -->
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets/css/slick.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url('/assets/css/slick.css') }}">
   <!-- price picker slider -->
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets/css/nouislider.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url('/assets/css/nouislider.css') }}">
   <!-- Theme color -->
-  <link id="switcher" href="{{ url('public/assets/css/theme-color/default-theme.css') }}" rel="stylesheet">
+  <link id="switcher" href="{{ url('/assets/css/theme-color/default-theme.css') }}" rel="stylesheet">
   <!-- <link id="switcher" href="css/theme-color/bridge-theme.css" rel="stylesheet"> -->
   <!-- Top Slider CSS -->
   <link href="{{ url('/assets/css/sequence-theme.modern-slide-in.css') }}" rel="stylesheet" media="all">
@@ -68,9 +68,9 @@
               <!-- / header top left -->
               <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
-                  <li><a href="account.html">Mi cuenta</a></li>
-                  <li class="hidden-xs"><a href="wishlist.html">Wishlist</a></li>
-                  <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                  <li><a href=" {{ url('/account') }} ">Mi cuenta</a></li>
+                  <li class="hidden-xs"><a href=" {{ url('/wishlist') }} ">Wishlist</a></li>
+                  <li><a href="{{ url('/login') }}" data-toggle="modal" data-target="#login-modal">Login</a></li>
                 </ul>
               </div>
             </div>
@@ -169,6 +169,7 @@
             <!-- Left nav -->
             <ul class="nav navbar-nav">
               <li><a href="{{ url('/') }}">Inicio</a></li>
+              <li><a href="{{ url('/product') }}">Catálogo completo</a></li>
               <li><a href="{{ url('/Men/product-men') }}"> Hombre <span class="caret"></span></a>
                 <ul class="dropdown-menu">                
                   <li><a href="{{ url('/Men/product-men-casual') }}">Casual</a></li>
@@ -193,22 +194,6 @@
   </section>
   <!-- / menu -->  
  
-  <!-- catg header banner section -->
-  <section id="aa-catg-head-banner">
-    <img src="img/fashion/fashion-header-bg-8.jpg" alt="fashion img">
-    <div class="aa-catg-head-banner-area">
-     <div class="container">
-      <div class="aa-catg-head-banner-content">
-        <h2>Pago</h2>
-        <ol class="breadcrumb">
-          <li><a href="{{ url('/') }}">Inicio</a></li>                   
-          <li class="active">Pago</li>
-        </ol>
-      </div>
-     </div>
-   </div>
-  </section>
-  <!-- / catg header banner section -->
 
  <!-- Cart view section -->
  <section id="checkout">
@@ -471,23 +456,23 @@
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{{ url('public/assets/js/bootstrap.js') }}"></script>  
+    <script src="{{ url('/assets/js/bootstrap.js') }}"></script>  
     <!-- SmartMenus jQuery plugin -->
-    <script type="text/javascript" src="{{ url('public/assets/js/jquery.smartmenus.js') }}"></script>
+    <script type="text/javascript" src="{{ url('/assets/js/jquery.smartmenus.js') }}"></script>
     <!-- SmartMenus jQuery Bootstrap Addon -->
-    <script type="text/javascript" src="{{ url('public/assets/js/jquery.smartmenus.bootstrap.js') }}"></script>  
+    <script type="text/javascript" src="{{ url('/assets/js/jquery.smartmenus.bootstrap.js') }}"></script>  
     <!-- To Slider JS -->
-    <script src="{{ url('public/assets/js/sequence.js') }}"></script>
-    <script src="{{ url('public/assets/js/sequence-theme.modern-slide-in.js') }}"></script>  
+    <script src="{{ url('/assets/js/sequence.js') }}"></script>
+    <script src="{{ url('/assets/js/sequence-theme.modern-slide-in.js') }}"></script>  
     <!-- Product view slider -->
-    <script type="text/javascript" src="{{ url('public/assets/js/jquery.simpleGallery.js') }}"></script>
-    <script type="text/javascript" src="{{ url('public/assets/js/jquery.simpleLens.js') }}"></script>
+    <script type="text/javascript" src="{{ url('/assets/js/jquery.simpleGallery.js') }}"></script>
+    <script type="text/javascript" src="{{ url('/assets/js/jquery.simpleLens.js') }}"></script>
     <!-- slick slider -->
-    <script type="text/javascript" src="{{ url('public/assets/js/slick.js') }}"></script>
+    <script type="text/javascript" src="{{ url('/assets/js/slick.js') }}"></script>
     <!-- Price picker slider -->
-    <script type="text/javascript" src="{{ url('public/assets/js/nouislider.js') }}"></script>
+    <script type="text/javascript" src="{{ url('/assets/js/nouislider.js') }}"></script>
     <!-- Custom js -->
-    <script src="{{ url('public/assets/js/custom.js') }}"></script>
+    <script src="{{ url('/assets/js/custom.js') }}"></script>
     
   </body>
 </html>

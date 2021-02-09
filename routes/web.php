@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,8 @@ use App\Http\Controllers\CatalogController;
 */
 
 Route::get('/', [HomeController::class, 'getHome'] );
+//
+Route::get('/contact', [HomeController::class, 'getContact'] );
 //
 Route::get('/product', [CatalogController::class, 'getProduct']);
 //
@@ -34,3 +37,11 @@ Route::get('/Women/product-women-casual', [CatalogController::class, 'getProduct
 Route::get('/Women/product-women-sport', [CatalogController::class, 'getProductWomenSport']);
 //
 Route::get('/Women/product-women-formal', [CatalogController::class, 'getProductWomenFormal']);
+//
+Route::get('/cart', [CatalogController::class, 'getCart']);
+//
+Route::get('/checkout', [CatalogController::class, 'getCheckout']);
+//
+Route::get('/account', [UserController::class, 'getAccount'] );
+//
+Route::get('/wishlist', [UserController::class, 'getWishlist'] );

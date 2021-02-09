@@ -11,4 +11,8 @@ class HomeController extends Controller
         $products = Products::All();
         return view('index', array('arrayProducts'=>$products)); 
     }
+    //
+    public function getContact(){
+        return view('contact');
+    }
 }
