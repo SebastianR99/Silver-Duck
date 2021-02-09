@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <title>Silver Duck | Home</title>
+    <title>Silver Duck | Producto</title>
     <link href="{{ url('/assets/img/favicon.ico') }}" rel="icon">
     
     <!-- Font awesome -->
@@ -26,7 +25,7 @@
     <link href="{{ url('/assets/css/sequence-theme.modern-slide-in.css') }}" rel="stylesheet" media="all">
 
     <!-- Main style sheet -->
-    <link href="{{ url('/assets/css/style.css') }}" rel="stylesheet"> 
+    <link href="{{ url('/assets/css/style.css') }}" rel="stylesheet">    
 
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
@@ -39,19 +38,18 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+  
 
   </head>
-  <!-- !Important notice -->
-  <!-- Only for product page body tag have to added .productPage class -->
-  <body class="productPage">  
+  <body> 
    <!-- wpf loader Two -->
-    <div id="wpf-loader-two">          
+   <div id="wpf-loader-two">          
       <div class="wpf-loader-two-inner">
         <span>Loading</span>
       </div>
     </div> 
     <!-- / wpf loader Two -->       
- <!-- SCROLL TOP BUTTON -->
+  <!-- SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
   <!-- END SCROLL TOP BUTTON -->
 
@@ -64,6 +62,10 @@
         <div class="row">
           <div class="col-md-12">
             <div class="aa-header-top-area">
+              <!-- start header top left -->
+              <div class="aa-header-top-left">
+                <!-- Aquí se le puede poner algo arriba a la derecha -->
+              </div>
               <!-- / header top left -->
               <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
@@ -80,6 +82,7 @@
     <!-- / header top  -->
 
     <!-- start header bottom  -->
+    
     <div class="aa-header-bottom">
       <div class="container">
         <div class="row">
@@ -88,16 +91,16 @@
               <!-- logo  -->
               <div class="aa-logo">
                 <!-- Text based logo -->
-                <a href="{{ url('/') }}"><img style="max-width: 80px; max-height: 80px;" src="https://i.imgur.com/9DZp1Vf.png" alt="logo img">
                 <a href="{{ url('/') }}">
                   <span class="fa fa-shopping-cart"></span>
                   <p>Silver<strong>Duck</strong> <span>Tu compañero de compras</span></p>
+                  <a href="{{ url('/') }}"><img style="max-width: 80px; max-height: 80px;" src="https://i.imgur.com/9DZp1Vf.png" alt="logo img">
                 </a>
                 <!-- img based logo -->
               </div>
               <!-- / logo  -->
                <!-- cart box -->
-               <div class="aa-cartbox">
+              <div class="aa-cartbox">
                 <img style="max-width: 60px; max-height: 40px;" src=" {{ url('/assets/img/shopping-cart.svg') }} " alt="">
                 <a class="aa-cart-link" href=" {{ url('/cart') }} ">
                   <span class="fa fa-shopping-basket"></span>
@@ -138,7 +141,7 @@
               <!-- search box -->
               <div class="aa-search-box">
                 <form action="">
-                  <input type="text" name="" id="" placeholder="Search here ex. 'man' ">
+                  <input type="text" name="" id="" placeholder="Busque aquí ej: ´camiseta´ ">
                   <button type="submit"><span class="fa fa-search"></span></button>
                 </form>
               </div>
@@ -188,75 +191,122 @@
             </ul>
           </div><!--/.nav-collapse -->
         </div>
-      </div> 
-      </div>
+      </div>       
     </div>
   </section>
-  <!-- / menu -->  
+  <!-- / menu -->
  
-  <!-- catg header banner section -->
-  <section id="aa-catg-head-banner">
-   <img src="{{ url('/assets/img/fashion/fashion-header-bg-men-casual.jpg') }}" alt="fashion img">
-   <div class="aa-catg-head-banner-area">
-     <div class="container">
-      <div class="aa-catg-head-banner-content">
-        <h2>Casual</h2>
-        <ol class="breadcrumb">
-          <li><a href="{{ url('/') }}">Inicio</a></li>         
-          <li class="active">Hombre</li>
-        </ol>
-      </div>
-     </div>
-   </div>
-  </section>
-  <!-- / catg header banner section -->
 
   <!-- product category -->
-  <section id="aa-product-category">
+  <section id="aa-product-details">
     <div class="container">
       <div class="row">
-        <div class="col-lg-9 col-md-9 col-sm-8 col-md-push-3">
-          <div class="aa-product-catg-content">
-            <div class="aa-product-catg-head">
-              <div class="aa-product-catg-head-left">
-                <form action="" class="aa-sort-form">
-                  <label for="">Sort by</label>
-                  <select name="">
-                    <option value="1" selected="Default">Default</option>
-                    <option value="2">Name</option>
-                    <option value="3">Price</option>
-                    <option value="4">Date</option>
-                  </select>
-                </form>
-              </div>
-              <div class="aa-product-catg-head-right">
-                <a id="grid-catg" href="#"><span class="fa fa-th"></span></a>
-                <a id="list-catg" href="#"><span class="fa fa-list"></span></a>
+        <div class="col-md-12">
+          <div class="aa-product-details-area">
+            <div class="aa-product-details-content">
+              <div class="row">
+                <!-- Modal view slider -->
+                <div class="col-md-5 col-sm-5 col-xs-12">                              
+                  <div class="aa-product-view-slider">                                
+                    <div id="demo-1" class="simpleLens-gallery-container">
+                      <div class="simpleLens-container">
+                        <div class="simpleLens-big-image-container"><a data-lens-image="{{ $product->product_pic1 }}" class="simpleLens-lens-image"><img src="{{ $product->product_pic1 }}" class="simpleLens-big-image"></a></div>
+                      </div>
+                      <div class="simpleLens-thumbnails-container">
+                          <a data-big-image="" data-lens-image="" class="simpleLens-thumbnail-wrapper" href="#">
+                            <img style="max-width: 40px; max-height: 60px;" src="#">
+                          </a>                                    
+                          <a data-big-image="" data-lens-image="" class="simpleLens-thumbnail-wrapper" href="#">
+                            <img style="max-width: 40px; max-height: 60px;" src="#">
+                          </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Modal view content -->
+                <div class="col-md-7 col-sm-7 col-xs-12">
+                  <div class="aa-product-view-content">
+                    <h3>T-Shirt</h3>
+                    <div class="aa-price-block">
+                      <span class="aa-product-view-price">{{ $product->product_price }}</span>
+                      @if ($product->product_avail == true)
+                        <p class="aa-product-avilability">Disponibilidad: <span>En stock = </span> <span></span> {{ $product->product_stock }} </p>
+                      @else
+                        <p class="aa-product-avilability">Disponibilidad: <span>Agotado</span></p>
+                      @endif
+                    </div>
+                    <p> {{ $product->product_desc_short }} </p>
+                    <h4>Size</h4>
+                    <div class="aa-prod-view-size">
+                      <a href="#"> {{ $product->product_size }} </a>
+                    </div>
+                    <h4>Color</h4>
+                    <div class="aa-color-tag">
+                      @if ($product->product_color == 'blue')
+                        <a href="#" style="background-color:blue;"></a>
+                      @elseif ($product->product_color == 'yellow')
+                        <a href="#" style="background-color:yellow;"></a>
+                      @elseif ($product->product_color == 'black')
+                        <a href="#" style="background-color:black;"></a>
+                      @elseif ($product->product_color == 'white')
+                        <a href="#" style="background-color:white;"></a>
+                      @elseif ($product->product_color == 'green')
+                        <a href="#" style="background-color:green;"></a>
+                      @elseif ($product->product_color == 'red')
+                        <a href="#" style="background-color:red;"></a>
+                      @endif
+                    </div>
+                    <div class="aa-prod-quantity">
+                      <p class="aa-prod-category">
+                        Categoría: <a href="">{{ strtoupper($product->product_type) }}</a>
+                      </p>
+                    </div>
+                    <div class="aa-prod-view-bottom">
+                      <a class="aa-add-to-cart-btn" href="#">Añadir al carrito</a>
+                      <a class="aa-add-to-cart-btn" href="#">Añadir a la Wishlist</a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="aa-product-catg-body">
-              <ul class="aa-product-catg">
+            <div class="aa-product-details-bottom">
+              <ul class="nav nav-tabs" id="myTab2">
+                <li><a href="#description" data-toggle="tab">Descripción</a></li>
+                <li><a href="#review" data-toggle="tab">Reviews</a></li>                
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div class="tab-pane fade in active" id="description">
+                  <p> {{ $product->product_desc_long }} </p>
+                </div>            
+              </div>
+            </div>
+            
+            <!-- Related product -->
+            <div class="aa-product-related-item">
+              <h3>Productos Similares</h3>
+              <ul class="aa-product-catg aa-related-item-slider">
                 <!-- start single product item -->
-                @foreach ($arrayProducts as $key => $products)
-                    <li>
-                      <figure>
-                        <a class="" href=" {{ url('/product-detail/' . $products->product_id) }} "><img style="width: 90% fit-content; height: 90%;" src="{{$products->product_pic1}}" alt="polo shirt img"></a>
-                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                        <figcaption>
-                          <h4 class="aa-product-title"><a href="#">{{ $products->product_name }}</a></h4>
-                          <span class="aa-product-price">{{ $products->product_price }}</span>
-                          <p class="aa-product-descrip">{{ $products->product_desc_short }}</p>
-                        </figcaption>
-                      </figure>                         
-                      <div class="aa-product-hvr-content">
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
-                      </div>
-                   <!-- product badge -->
-                      <span class="aa-badge aa-sale" href="#">SALE!</span>
-                    </li>                  
-                @endforeach                                          
+                @foreach ($arraySimilars as $key => $similars)
+                <li>
+                  <figure>
+                    <a class="aa-product-img" href="#"><img style="width: 100%; height: 90%;"  src=" {{ $similars->product_pic1 }} " alt="polo shirt img"></a>
+                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Añadir al carrito</a>
+                     <figcaption>
+                      <h4 class="aa-product-title"><a href="#"> {{ $similars->product_name }} </a></h4>
+                      <span class="aa-product-price"> {{ $similars->product_price }} </span>
+                    </figcaption>
+                  </figure>                     
+                  <div class="aa-product-hvr-content">
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                    <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
+                  </div>
+                  <!-- product badge -->
+                  <span class="aa-badge aa-sale" href="#">SALE!</span>
+                </li>
+                @endforeach
               </ul>
               <!-- quick view modal -->                  
               <div class="modal fade" id="quick-view-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -340,83 +390,17 @@
                 </div><!-- /.modal-dialog -->
               </div>
               <!-- / quick view modal -->   
-            </div>
-            <div class="aa-product-catg-pagination">
-              <nav>
-                <ul class="pagination">
-                  <li>
-                    <a href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                  </li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li>
-                    <a href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+            </div>  
           </div>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-4 col-md-pull-9">
-          <aside class="aa-sidebar">
-            <!-- single sidebar -->
-            <div class="aa-sidebar-widget">
-              <h3>Category</h3>
-              <ul class="aa-catg-nav">
-                <li><a href="{{ url('/Men/product-men') }}">Hombre</a></li>
-                <li><a href="{{ url('/Women/product-women') }}">Mujer</a></li>
-              </ul>
-            </div>
-            <!-- single sidebar -->
-            <div class="aa-sidebar-widget">
-              <h3>Tags</h3>
-              <div class="tag-cloud">
-                <a href="#">Fashion</a>
-                <a href="#">Ecommerce</a>
-                <a href="#">Shop</a>
-                <a href="#">Hand Bag</a>
-                <a href="#">Laptop</a>
-                <a href="#">Head Phone</a>
-                <a href="#">Pen Drive</a>
-              </div>
-            </div>
-            <!-- single sidebar -->
-            <div class="aa-sidebar-widget">
-              <h3>Más populares</h3>
-              <div class="aa-recently-views">
-                <ul>
-                  @foreach ($arrayProducts as $key => $products)
-                    @if ($products->product_stock <= 3)
-                      <li>
-                        <a href="#" class="aa-cartbox-img"><img alt="img" src="{{ $products->product_pic1 }}"></a>
-                        <div class="aa-cartbox-info">
-                          <h4><a href="#"> {{ $products->product_name }} </a></h4>
-                         <p> {{ $products->product_price }} </p>
-                        </div>                    
-                      </li>       
-                    @endif
-                  @endforeach                               
-                </ul>
-              </div>                            
-            </div>
-          </aside>
-        </div>
-       
       </div>
     </div>
   </section>
   <!-- / product category -->
 
 
-  <!-- footer -->  
-  <footer id="aa-footer">
+   <!-- footer -->  
+   <footer id="aa-footer">
     <!-- footer bottom -->
     <div class="aa-footer-top">
      <div class="container">
@@ -479,6 +463,7 @@
     </div>
   </footer>
   <!-- / footer -->
+
   <!-- Login Modal -->  
   <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -501,10 +486,7 @@
         </div>                        
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
-  </div>
-
-
-    
+  </div>    
 
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -526,7 +508,6 @@
   <script type="text/javascript" src="{{ url('/assets/js/nouislider.js') }}"></script>
   <!-- Custom js -->
   <script src="{{ url('/assets/js/custom.js') }}"></script> 
-  
 
   </body>
 </html>

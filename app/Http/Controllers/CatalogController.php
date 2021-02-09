@@ -66,6 +66,21 @@ class CatalogController extends Controller
         return view('Women.product-women-formal', array('arrayProducts'=>$products));
     }
     //
+    
+    //
+    public function getDetail($product_id){
+        $product = Products::where('product_id', $product_id)
+                           ->first();
+        $genre = $product->product_genre;
+        $category = $product->product_type;
+        $similars = Products::where('product_genre', $genre)
+                           ->where('product_type', $category)
+                           ->where('product_id', '!=', $product_id)
+                           ->take(4)
+                           ->get();
+        return view('product-detail', array('product'=>$product), array('arraySimilars'=>$similars));
+    }
+    //
     public function getCart(){
         //$products = Products::All();
         return view('cart'/*, array('arrayProducts'=>$products)*/);

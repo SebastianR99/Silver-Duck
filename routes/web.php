@@ -38,6 +38,8 @@ Route::get('/Women/product-women-sport', [CatalogController::class, 'getProductW
 //
 Route::get('/Women/product-women-formal', [CatalogController::class, 'getProductWomenFormal']);
 //
+Route::get('/product-detail/{product_id}', [CatalogController::class, 'getDetail']);
+//
 Route::get('/cart', [CatalogController::class, 'getCart']);
 //
 Route::get('/checkout', [CatalogController::class, 'getCheckout']);
