@@ -217,9 +217,9 @@
                    <input type="text" placeholder="Correo Electrónico">
                    <label for="">Contraseña<span>*</span></label>
                     <input type="password" placeholder="Contraseña">
-                    <button type="submit" class="aa-browse-btn">Iniciar Sesion</button>
-                    <label class="rememberme" for="rememberme"><input type="checkbox" id="rememberme"> Recuerdame </label>
-                    <p class="aa-lost-password"><a href="#">Olvidaste tu constraseña?</a></p>
+                    <button type="submit" class="aa-browse-btn">Iniciar Sesión</button>
+                    <label class="rememberme" for="rememberme"><input type="checkbox" id="rememberme"> Recuérdame </label>
+                    <p class="aa-lost-password"><a href="#">¿Olvidaste tu constraseña?</a></p>
                   </form>
                 </div>
               </div>
@@ -231,7 +231,7 @@
                     <input type="text" placeholder="Correo Electrónico">
                     <label for="">Contraseña<span>*</span></label>
                     <input type="password" placeholder="Contraseña">
-                    <button type="submit" class="aa-browse-btn">Registrate</button>                    
+                    <button type="submit" class="aa-browse-btn">Regístrate</button>                    
                   </form>
                 </div>
               </div>
@@ -295,17 +295,17 @@
       <div class="modal-content">                      
         <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4>Login or Register</h4>
+          <h4>Iniciar sesión o registrarse</h4>
           <form class="aa-login-form" action="">
-            <label for="">Username or Email address<span>*</span></label>
-            <input type="text" placeholder="Username or email">
-            <label for="">Password<span>*</span></label>
-            <input type="password" placeholder="Password">
-            <button class="aa-browse-btn" type="submit">Login</button>
-            <label for="rememberme" class="rememberme"><input type="checkbox" id="rememberme"> Remember me </label>
-            <p class="aa-lost-password"><a href="#">Lost your password?</a></p>
+            <label for="username">Correo Electrónico<span>*</span></label>
+            <input type="text" placeholder="ejemplo@example.com">
+            <label for="passw">Contraseña<span>*</span></label>
+            <input type="password" placeholder="12345">
+            <button class="aa-browse-btn" type="submit">Iniciar sesión</button>
+            <label for="rememberme" class="rememberme"><input type="checkbox" id="rememberme"> Recuérdame </label>
+            <p class="aa-lost-password"><a href="#">¿Olvidaste tu contraseña?</a></p>
             <div class="aa-register-now">
-              Don't have an account?<a href="account.html">Register now!</a>
+            ¿No tienes una cuenta?<a href=" {{ url('/account') }} ">¡Regístrate ahora!</a>
             </div>
           </form>
         </div>                        
