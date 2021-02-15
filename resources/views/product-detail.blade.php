@@ -212,23 +212,15 @@
                       <div class="simpleLens-container">
                         <div class="simpleLens-big-image-container"><a data-lens-image="{{ $product->product_pic1 }}" class="simpleLens-lens-image"><img src="{{ $product->product_pic1 }}" class="simpleLens-big-image"></a></div>
                       </div>
-                      <div class="simpleLens-thumbnails-container">
-                          <a data-big-image="" data-lens-image="" class="simpleLens-thumbnail-wrapper" href="#">
-                            <img style="max-width: 40px; max-height: 60px;" src="#">
-                          </a>                                    
-                          <a data-big-image="" data-lens-image="" class="simpleLens-thumbnail-wrapper" href="#">
-                            <img style="max-width: 40px; max-height: 60px;" src="#">
-                          </a>
-                      </div>
                     </div>
                   </div>
                 </div>
                 <!-- Modal view content -->
                 <div class="col-md-7 col-sm-7 col-xs-12">
                   <div class="aa-product-view-content">
-                    <h3>T-Shirt</h3>
+                    <h3>{{ $product->product_name }}</h3>
                     <div class="aa-price-block">
-                      <span class="aa-product-view-price">{{ $product->product_price }}</span>
+                      <span class="aa-product-view-price">$ {{ $product->product_price }}</span>
                       @if ($product->product_avail == true)
                         <p class="aa-product-avilability">Disponibilidad: <span>En stock = </span> <span></span> {{ $product->product_stock }} </p>
                       @else

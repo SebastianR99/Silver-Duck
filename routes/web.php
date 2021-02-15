@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\UserController;
+use App\Models\User;
+use App\Models\Products;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,3 +49,7 @@ Route::get('/checkout', [CatalogController::class, 'getCheckout']);
 Route::get('/account', [UserController::class, 'getAccount'] );
 //
 Route::get('/wishlist', [UserController::class, 'getWishlist'] );
+//
+Route::get('/user-form', [UserController::class, 'getForm'] );
+//
+Route::post('/user-form-post', [UserController::class, 'postForm'] );

@@ -240,7 +240,7 @@
                 @foreach ($arrayProducts as $key => $products)
                   <li>
                     <figure>
-                     <a class="" href="#"><img style="width: 90% fit-content; height: 90%;" src="{{$products->product_pic1}}" alt="polo shirt img"></a>
+                     <a class="" href="{{ url('/product-detail/' . $products->product_id) }}"><img style="width: 90% fit-content; height: 90%;" src="{{$products->product_pic1}}" alt="polo shirt img"></a>
                      <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                       <figcaption>
                        <h4 class="aa-product-title"><a href="#">{{ $products->product_name }}</a></h4>

@@ -15,18 +15,17 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('product_id');
-            $table->string('product_name');
-            $table->string('product_genre');
-            $table->string('product_type');
-            $table->string('product_price');
+            $table->text('product_name');
+            $table->text('product_genre');
+            $table->text('product_type');
+            $table->text('product_price');
             $table->boolean('product_avail')->default(true);
             $table->integer('product_stock');
-            $table->string('product_desc_short');
-            $table->string('product_desc_long');
-            $table->string('product_size');
-            $table->string('product_color');
-            $table->string('product_pic1');
-            $table->string('product_pic2');
+            $table->text('product_desc_short');
+            $table->text('product_desc_long');
+            $table->text('product_size');
+            $table->text('product_color');
+            $table->text('product_pic1')-> nullable ();
             $table->timestamps();
         });
     }
@@ -38,6 +37,7 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
+        Schema::drop('products');
         Schema::dropIfExists('products');
     }
 }
