@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use App\Models\Products;
 use App\Models\User;
+use App\Models\Wishlist;
 
 use Illuminate\Database\Seeder;
 
@@ -19,10 +20,41 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+
+        
         self::seedProductos();
 		$this->command->info('Tabla productos inicializada con datos!');
+
+        self::seedWishlists();
+        $this->command->info('Tabla de usuarios inicializada con datos!');
+
+        self::seedUsers();
+        $this->command->info('Tabla de usuarios inicializada con datos!');
+
         
     }
+
+    private function seedUsers()
+	{
+		DB::table('users')->delete();
+		$user= new User;
+		$user->id='1234';
+		$user->name='Angie';
+		$user->email='Angie@gmail.com';
+		$user->password=bcrypt('43i873y');
+        $user->user_list= '1';
+		$user->save();
+	}
+
+    private function seedWishlists()
+	{
+		DB::table('wishlists')->delete();
+		$wish= new Wishlist;
+        $wish->list_id = '1';
+        $wish->list_product = '1';
+		$wish->save();
+	}
+
 
     private function seedProductos()
     {

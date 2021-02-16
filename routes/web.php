@@ -1,11 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Models\User;
 use App\Models\Products;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +22,8 @@ use App\Models\Products;
 */
 
 Route::get('/', [HomeController::class, 'getHome'] );
+//
+Route::get('/no', [HomeController::class, 'getHomeno'] )->name('no');
 //
 Route::get('/contact', [HomeController::class, 'getContact'] );
 //
@@ -53,3 +58,8 @@ Route::get('/wishlist', [UserController::class, 'getWishlist'] );
 Route::get('/user-form', [UserController::class, 'getForm'] );
 //
 Route::post('/user-form-post', [UserController::class, 'postForm'] );
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

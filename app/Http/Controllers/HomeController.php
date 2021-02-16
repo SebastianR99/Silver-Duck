@@ -1,12 +1,32 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Products;
 
 use Illuminate\Http\Request;
-use App\Models\Products;
 
 class HomeController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('home');
+    }
+
     public function getHome() {
         $products = Products::All();
         return view('index', array('arrayProducts'=>$products)); 
@@ -15,5 +35,4 @@ class HomeController extends Controller
     public function getContact(){
         return view('contact');
     }
-    
 }

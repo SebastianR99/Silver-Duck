@@ -90,4 +90,9 @@ class CatalogController extends Controller
         //$products = Products::All();
         return view('checkout'/*, array('arrayProducts'=>$products)*/);
     }
+
+    public function getHomeno()
+    {
+        return view('no.indexno');
+    }
 }
