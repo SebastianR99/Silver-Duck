@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <title>SilverDuck | Wishlist </title>
+    <title>SilverDuck | 404</title>
+    <link href="{{ url('/assets/img/favicon.ico') }}" rel="icon">
     
     <!-- Font awesome -->
     <link href="{{ url('/assets/fonts/font-awesome.css') }}" rel="stylesheet">
@@ -30,6 +31,7 @@
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+   
     
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -41,7 +43,7 @@
   
 
   </head>
-  <body>  
+  <body>   
    <!-- wpf loader Two -->
     <div id="wpf-loader-two">          
       <div class="wpf-loader-two-inner">
@@ -55,7 +57,8 @@
 
 
   <!-- Start header section -->
-  <header id="aa-header">
+   <!-- Start header section -->
+   <header id="aa-header">
     <!-- start header top  -->
     <div class="aa-header-top">
       <div class="container">
@@ -67,19 +70,27 @@
                 <!-- Aquí se le puede poner algo arriba a la derecha -->
               </div>
               <!-- / header top left -->
+              @if(Auth::check())
               <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
                   <li><a href=" {{ url('/account') }} ">Mi cuenta</a></li>
-                  <li class="hidden-xs"><a href=" {{ url('/wishlist') }} ">Wishlist</a></li>
-                  <li><a href="{{ url('/login') }}" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                  <li><a href="{{ url('/logout') }}">Logout</a></li>
                 </ul>
               </div>
+              @else
+              <div class="aa-header-top-right">
+                <ul class="aa-head-top-nav-right">
+                  <li><a href="{{ url('/login') }}">Login</a></li>
+                </ul>
+              </div>
+              @endif
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- / header top  -->
+
     <!-- start header bottom  -->
     <div class="aa-header-bottom">
       <div class="container">
@@ -90,17 +101,16 @@
               <div class="aa-logo">
                 <!-- Text based logo -->
                 <a href="{{ url('/') }}"><img style="max-width: 80px; max-height: 80px;" src="https://i.imgur.com/9DZp1Vf.png" alt="logo img">
-                <a href="{{ url('/') }}">
-                  <span class="fa fa-shopping-cart"></span>
-                  <p>Silver<strong>Duck</strong> <span>Tu compañero de compras</span></p>
-                </a>
+                  <a href="{{ url('/') }}">
+                    <span class="fa fa-shopping-cart"></span>
+                    <p>Silver<strong>Duck</strong> <span>Tu compañero de compras</span></p>
+                  </a>
                 <!-- img based logo -->
               </div>
               <!-- / logo  -->
                <!-- cart box -->
-               <div class="aa-cartbox">
-                <img style="max-width: 60px; max-height: 40px;" src=" {{ url('/assets/img/shopping-cart.svg') }} " alt="">
-                <a class="aa-cart-link" href=" {{ url('/cart') }} ">
+              <div class="aa-cartbox">
+                <a class="aa-cart-link" href="#">
                   <span class="fa fa-shopping-basket"></span>
                   <span class="aa-cart-title">CARRITO DE COMPRAS</span>
                   <span class="aa-cart-notify">2</span>
@@ -108,7 +118,7 @@
                 <div class="aa-cartbox-summary">
                   <ul>
                     <li>
-                      <a class="aa-cartbox-img" href="#"><img src=" {{ url('/assets/img/woman-small-2.jpg') }}" alt="img"></a>
+                      <a class="aa-cartbox-img" href="#"><img src="img/woman-small-2.jpg" alt="img"></a>
                       <div class="aa-cartbox-info">
                         <h4><a href="#">Nombre del producto</a></h4>
                         <p>1 x $250</p>
@@ -116,7 +126,7 @@
                       <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
                     </li>
                     <li>
-                      <a class="aa-cartbox-img" href="#"><img src=" {{ url('/assets/img/woman-small-1.jpg') }}" alt="img"></a>
+                      <a class="aa-cartbox-img" href="#"><img src="img/woman-small-1.jpg" alt="img"></a>
                       <div class="aa-cartbox-info">
                         <h4><a href="#">Nombre del producto</a></h4>
                         <p>1 x $250</p>
@@ -132,7 +142,7 @@
                       </span>
                     </li>
                   </ul>
-                  <a class="aa-cartbox-checkout aa-primary-btn" href=" {{ url('/checkout') }} ">Checkout</a>
+                  <a class="aa-cartbox-checkout aa-primary-btn" href="#">Checkout</a>
                 </div>
               </div>
               <!-- / cart box -->
@@ -170,7 +180,6 @@
             <!-- Left nav -->
             <ul class="nav navbar-nav">
               <li><a href="{{ url('/') }}">Inicio</a></li>
-              <li><a href="{{ url('/product') }}">Catálogo completo</a></li>
               <li><a href="{{ url('/Men/product-men') }}"> Hombre <span class="caret"></span></a>
                 <ul class="dropdown-menu">                
                   <li><a href="{{ url('/Men/product-men-casual') }}">Casual</a></li>
@@ -186,71 +195,32 @@
                 </ul>
               </li>
               <li><a href="{{ url('/contact') }}">Contacto</a></li>
-            </ul>
+            </ul>             
           </div><!--/.nav-collapse -->
         </div>
-      </div>       
+      </div> 
+      </div>
     </div>
   </section>
   <!-- / menu -->  
  
-
- <!-- Cart view section -->
- <section id="cart-view">
-   <div class="container">
-     <div class="row">
-       <div class="col-md-12">
-         <div class="cart-view-area">
-           <div class="cart-view-table aa-wishlist-table">
-             <form action="">
-               <div class="table-responsive">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th></th>
-                        <th></th>
-                        <th>Producto</th>
-                        <th>Precio</th>
-                        <th>Stock </th>
-                        <th></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
-                        <td><a href="#"><img src="img/man/polo-shirt-1.png" alt="img"></a></td>
-                        <td><a class="aa-cart-title" href="#">Camiseta Polo</a></td>
-                        <td>$250</td>
-                        <td>En Stock</td>
-                        <td><a href="#" class="aa-add-to-cart-btn">Añadir al carrito</a></td>
-                      </tr>
-                      <tr>
-                        <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
-                        <td><a href="#"><img src="img/man/polo-shirt-2.png" alt="img"></a></td>
-                        <td><a class="aa-cart-title" href="#">Camiseta Polo</a></td>
-                        <td>$150</td>
-                        <td>En Stock</td>
-                        <td><a href="#" class="aa-add-to-cart-btn">Añadir al carrito</a></td>
-                      </tr>
-                      <tr>
-                        <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
-                        <td><a href="#"><img src="img/man/polo-shirt-3.png" alt="img"></a></td>
-                        <td><a class="aa-cart-title" href="#">Camisetas Polo</a></td>
-                        <td>$50</td>
-                        <td>En Stock</td>
-                        <td><a href="#" class="aa-add-to-cart-btn">Añadir al carrito</a></td>
-                      </tr>                     
-                      </tbody>
-                  </table>
-                </div>
-             </form>             
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
- </section>
- <!-- / Cart view section -->
+  
+  <!-- 404 error section -->
+  <section id="aa-error">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-error-area">
+            <h2>404</h2>
+            <span>Pagina no encontrada</span>
+            <p>Esta página no se encuentra disponible por el momento</p>
+            <a href="{{ url('/') }}"> Página de inicio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- / 404 error section -->
 
   <!-- footer -->  
   <footer id="aa-footer">
@@ -304,17 +274,17 @@
       <div class="modal-content">                      
         <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4>Iniciar sesión o registrarse</h4>
+          <h4>Login or Register</h4>
           <form class="aa-login-form" action="">
-            <label for="username">Correo Electrónico<span>*</span></label>
-            <input type="text" placeholder="ejemplo@example.com">
-            <label for="passw">Contraseña<span>*</span></label>
-            <input type="password" placeholder="12345">
-            <button class="aa-browse-btn" type="submit">Iniciar sesión</button>
-            <label for="rememberme" class="rememberme"><input type="checkbox" id="rememberme"> Recuérdame </label>
-            <p class="aa-lost-password"><a href="#">¿Olvidaste tu contraseña?</a></p>
+            <label for="">Username or Email address<span>*</span></label>
+            <input type="text" placeholder="Username or email">
+            <label for="">Password<span>*</span></label>
+            <input type="password" placeholder="Password">
+            <button class="aa-browse-btn" type="submit">Login</button>
+            <label for="rememberme" class="rememberme"><input type="checkbox" id="rememberme"> Remember me </label>
+            <p class="aa-lost-password"><a href="#">Lost your password?</a></p>
             <div class="aa-register-now">
-              ¿No tienes una cuenta?<a href="account.html">¡Regístrate ahora!</a>
+              Don't have an account?<a href="account.html">Register now!</a>
             </div>
           </form>
         </div>                        
@@ -322,27 +292,27 @@
     </div><!-- /.modal-dialog -->
   </div>
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="{{ url('/assets/js/bootstrap.js') }}"></script>  
-<!-- SmartMenus jQuery plugin -->
-<script type="text/javascript" src="{{ url('/assets/js/jquery.smartmenus.js') }}"></script>
-<!-- SmartMenus jQuery Bootstrap Addon -->
-<script type="text/javascript" src="{{ url('/assets/js/jquery.smartmenus.bootstrap.js') }}"></script>  
-<!-- To Slider JS -->
-<script src="{{ url('/assets/js/sequence.js') }}"></script>
-<script src="{{ url('/assets/js/sequence-theme.modern-slide-in.js') }}"></script>  
-<!-- Product view slider -->
-<script type="text/javascript" src="{{ url('/assets/js/jquery.simpleGallery.js') }}"></script>
-<script type="text/javascript" src="{{ url('/assets/js/jquery.simpleLens.js') }}"></script>
-<!-- slick slider -->
-<script type="text/javascript" src="{{ url('/assets/js/slick.js') }}"></script>
-<!-- Price picker slider -->
-<script type="text/javascript" src="{{ url('/assets/js/nouislider.js') }}"></script>
-<!-- Custom js -->
-<script src="{{ url('/assets/js/custom.js') }}"></script> 
-  
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="{{ url('/assets/js/bootstrap.js') }}"></script>  
+  <!-- SmartMenus jQuery plugin -->
+  <script type="text/javascript" src="{{ url('/assets/js/jquery.smartmenus.js') }}"></script>
+  <!-- SmartMenus jQuery Bootstrap Addon -->
+  <script type="text/javascript" src="{{ url('/assets/js/jquery.smartmenus.bootstrap.js') }}"></script>  
+  <!-- To Slider JS -->
+  <script src="{{ url('/assets/js/sequence.js') }}"></script>
+  <script src="{{ url('/assets/js/sequence-theme.modern-slide-in.js') }}"></script>  
+  <!-- Product view slider -->
+  <script type="text/javascript" src="{{ url('/assets/js/jquery.simpleGallery.js') }}"></script>
+  <script type="text/javascript" src="{{ url('/assets/js/jquery.simpleLens.js') }}"></script>
+  <!-- slick slider -->
+  <script type="text/javascript" src="{{ url('/assets/js/slick.js') }}"></script>
+  <!-- Price picker slider -->
+  <script type="text/javascript" src="{{ url('/assets/js/nouislider.js') }}"></script>
+  <!-- Custom js -->
+  <script src="{{ url('/assets/js/custom.js') }}"></script> 
 
   </body>
 </html>

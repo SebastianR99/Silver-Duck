@@ -23,7 +23,11 @@ use App\Models\Products;
 
 Route::get('/', [HomeController::class, 'getHome'] );
 //
-Route::get('/no', [HomeController::class, 'getHomeno'] )->name('no');
+Route::get('/index', [HomeController::class, 'getHome'] );
+//
+Route::get('/no', [CatalogController::class, 'getHomeno'] )->name('no');
+//
+Route::get('/logout', [LoginController::class, 'logout'] );
 //
 Route::get('/contact', [HomeController::class, 'getContact'] );
 //

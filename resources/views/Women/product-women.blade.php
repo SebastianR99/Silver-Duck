@@ -65,13 +65,20 @@
           <div class="col-md-12">
             <div class="aa-header-top-area">
               <!-- / header top left -->
+              @if(Auth::check())
               <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
                   <li><a href=" {{ url('/account') }} ">Mi cuenta</a></li>
-                  <li class="hidden-xs"><a href=" {{ url('/wishlist') }} ">Wishlist</a></li>
-                  <li><a href="{{ url('/login') }}" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                  <li><a href="{{ url('/logout') }}">Logout</a></li>
                 </ul>
               </div>
+              @else
+              <div class="aa-header-top-right">
+                <ul class="aa-head-top-nav-right">
+                  <li><a href="{{ url('/login') }}">Login</a></li>
+                </ul>
+              </div>
+              @endif
             </div>
           </div>
         </div>

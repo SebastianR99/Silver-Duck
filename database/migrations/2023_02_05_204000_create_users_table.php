@@ -22,7 +22,6 @@ class CreateUsersTable extends Migration
             $table->string('user_city')->default('');
             $table->string('user_address')->default('');
             $table->string('user_phone')->default('');
-            $table->foreignId('user_list')->references('list_id')->on('wishlists');
             $table->rememberToken();
             $table->timestamps();
         });

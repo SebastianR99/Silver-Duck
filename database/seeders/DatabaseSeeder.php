@@ -25,9 +25,6 @@ class DatabaseSeeder extends Seeder
         self::seedProductos();
 		$this->command->info('Tabla productos inicializada con datos!');
 
-        self::seedWishlists();
-        $this->command->info('Tabla de usuarios inicializada con datos!');
-
         self::seedUsers();
         $this->command->info('Tabla de usuarios inicializada con datos!');
 
@@ -42,19 +39,8 @@ class DatabaseSeeder extends Seeder
 		$user->name='Angie';
 		$user->email='Angie@gmail.com';
 		$user->password=bcrypt('43i873y');
-        $user->user_list= '1';
 		$user->save();
 	}
-
-    private function seedWishlists()
-	{
-		DB::table('wishlists')->delete();
-		$wish= new Wishlist;
-        $wish->list_id = '1';
-        $wish->list_product = '1';
-		$wish->save();
-	}
-
 
     private function seedProductos()
     {
