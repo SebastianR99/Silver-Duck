@@ -78,6 +78,7 @@
               <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
                   <li><a href="{{ url('/login') }}">Login</a></li>
+                  <li><a href="{{ url('/register') }}">Registrarse</a></li>
                 </ul>
               </div>
               @endif
