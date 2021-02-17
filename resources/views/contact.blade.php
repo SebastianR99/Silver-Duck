@@ -112,37 +112,8 @@
                 <a class="aa-cart-link" href=" {{ url('/cart') }} ">
                   <span class="fa fa-shopping-basket"></span>
                   <span class="aa-cart-title">CARRITO DE COMPRAS</span>
-                  <span class="aa-cart-notify">2</span>
+                 <span class="aa-cart-notify">{{$car}}</span>
                 </a>
-                <div class="aa-cartbox-summary">
-                  <ul>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src=" {{ url('/assets/img/woman-small-2.jpg') }}" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Nombre del producto</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src=" {{ url('/assets/img/woman-small-1.jpg') }}" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Nombre del producto</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>                    
-                    <li>
-                      <span class="aa-cartbox-total-title">
-                        Total
-                      </span>
-                      <span class="aa-cartbox-total-price">
-                        $500
-                      </span>
-                    </li>
-                  </ul>
-                  <a class="aa-cartbox-checkout aa-primary-btn" href=" {{ url('/checkout') }} ">Checkout</a>
-                </div>
               </div>
               <!-- / cart box -->
               <!-- search box -->
@@ -178,7 +149,7 @@
           <div class="navbar-collapse collapse">
             <!-- Left nav -->
             <ul class="nav navbar-nav">
-              <li><a href="{{ url('/') }}">Inicio</a></li>
+              <li><a href="{{ url('/prueba') }}">Inicio</a></li>
               <li><a href="{{ url('/product') }}">Catálogo completo</a></li>
               <li><a href="{{ url('/Men/product-men') }}"> Hombre <span class="caret"></span></a>
                 <ul class="dropdown-menu">                
@@ -202,7 +173,8 @@
     </div>
   </section>
   <!-- / menu -->  
- 
+  @include('flash-message') 
+
   <!-- catg header banner section -->
   <section id="aa-catg-head-banner">
    <img src=" {{ url('/assets/img/contacto.jpg') }} " alt="fashion img">
@@ -219,6 +191,7 @@
    </div>
   </section>
   <!-- / catg header banner section -->
+  @include('flash-message')
 <!-- start contact section -->
  <section id="aa-contact">
    <div class="container">

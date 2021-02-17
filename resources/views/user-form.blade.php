@@ -111,37 +111,8 @@
                 <a class="aa-cart-link" href="#">
                   <span class="fa fa-shopping-basket"></span>
                   <span class="aa-cart-title">CARRITO DE COMPRAS</span>
-                  <span class="aa-cart-notify">2</span>
+                 <span class="aa-cart-notify">{{$car}}</span>
                 </a>
-                <div class="aa-cartbox-summary">
-                  <ul>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src=" {{ url('/assets/img/woman-small-2.jpg') }}" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Nombre del producto</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src=" {{ url('/assets/img/woman-small-1.jpg') }}" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Nombre del producto</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>                    
-                    <li>
-                      <span class="aa-cartbox-total-title">
-                        Total
-                      </span>
-                      <span class="aa-cartbox-total-price">
-                        $500
-                      </span>
-                    </li>
-                  </ul>
-                  <a class="aa-cartbox-checkout aa-primary-btn" href="checkout.html">Checkout</a>
-                </div>
               </div>
               <!-- / cart box -->
               <!-- search box -->
@@ -200,7 +171,8 @@
     </div>
   </section>
   <!-- / menu -->  
- 
+  @include('flash-message') 
+
   <!-- / catg header banner section -->
 <!-- start contact section -->
  <section id="aa-contact">
@@ -215,6 +187,20 @@
                  <div class="aa-contact-address-left">
                    <form class="comments-form contact-form" action="{{url ('/user-form-post') }}" method='POST'>
                    @csrf
+                   <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">                        
+                          <input id='names' name='names' type="text" placeholder="Nombres Completos" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">                        
+                          <input id='lastnames' name='lastnames' type="text" placeholder="Apellidos Completos" class="form-control">
+                        </div>
+                      </div>
+                    </div>
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">                        
@@ -225,21 +211,21 @@
                     <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">                        
-                            <input id='ciudad' name='ciudad' type="email" placeholder="Ciudad" class="form-control">
+                            <input id='ciudad' name='ciudad' type="text" placeholder="Ciudad" class="form-control">
                           </div>
                         </div>
                     </div>     
                     <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">                        
-                            <input id='direccion' name='direccion' type="email" placeholder="Dirección" class="form-control">
+                            <input id='direccion' name='direccion' type="text" placeholder="Dirección" class="form-control">
                           </div>
                         </div>
                     </div>  
                     <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">                        
-                            <input id='telefono' name='telefono' type="email" placeholder="Teléfono" class="form-control">
+                            <input id='telefono' name='telefono' type="text" placeholder="Teléfono" class="form-control">
                           </div>
                         </div>
                     </div>

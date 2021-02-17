@@ -108,40 +108,12 @@
               <!-- / logo  -->
                <!-- cart box -->
               <div class="aa-cartbox">
-                <a class="aa-cart-link" href="#">
+              <img style="max-width: 60px; max-height: 40px;" src=" {{ url('/assets/img/shopping-cart.svg') }} " alt="">
+                <a class="aa-cart-link" href="{{ url('/cart') }}">
                   <span class="fa fa-shopping-basket"></span>
                   <span class="aa-cart-title">CARRITO DE COMPRAS</span>
-                  <span class="aa-cart-notify">2</span>
+                  <span class="aa-cart-notify">{{$car}}</span>
                 </a>
-                <div class="aa-cartbox-summary">
-                  <ul>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src=" {{ url('/assets/img/woman-small-2.jpg') }}" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Nombre del producto</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src=" {{ url('/assets/img/woman-small-1.jpg') }}" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Nombre del producto</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>                    
-                    <li>
-                      <span class="aa-cartbox-total-title">
-                        Total
-                      </span>
-                      <span class="aa-cartbox-total-price">
-                        $500
-                      </span>
-                    </li>
-                  </ul>
-                  <a class="aa-cartbox-checkout aa-primary-btn" href="checkout.html">Checkout</a>
-                </div>
               </div>
               <!-- / cart box -->
               <!-- search box -->
@@ -200,7 +172,8 @@
     </div>
   </section>
   <!-- / menu -->  
- 
+  @include('flash-message') 
+
   <!-- catg header banner section -->
   <section id="aa-catg-head-banner">
    <img src="{{url('/assets/img/account.jpg')}}" alt="fashion img">
@@ -226,32 +199,41 @@
            <div class="cart-view-table">
              <!-- Cart Total view -->
              <div class="cart-view-total">
+               @include('flash-message')
                <h4>Mi Información</h4>
                <table class="aa-totals-table">
                  <tbody>
                    <tr>
                      <th>Nombre de Usuario</th>
-                     <!-- <td>{{$user->name}}</td> -->
+                     <td>{{$user->name}}</td>
                    </tr>
                    <tr>
                      <th>Email</th>
-                      <!--<td>{{$user->mail}}</td> -->
+                      <td>{{$user->email}}</td> 
+                   </tr>
+                   <tr>
+                     <th>Nombres</th>
+                     <td>{{$user->full_name}}</td> 
+                   </tr>
+                   <tr>
+                     <th>Apellidos</th>
+                      <td>{{$user->full_lastname}}</td> 
                    </tr>
                    <tr>
                      <th>Departamento</th>
-                      <!--<td>{{$user->user_dpto}}</td> -->
+                      <td>{{$user->user_dpto}}</td>
                    </tr>
                    <tr>
                      <th>Ciudad</th>
-                      <!--<td>{{$user->user_city}}</td> -->
+                      <td>{{$user->user_city}}</td> 
                    </tr>
                    <tr>
                      <th>Dirección de facturación</th>
-                      <!--<td>{{$user->user_address}}</td> -->
+                      <td>{{$user->user_address}}</td> 
                    </tr>
                    <tr>
                      <th>Teléfono</th>
-                     <!-- <td>{{$user->user_phone}}</td> -->
+                     <td>{{$user->user_phone}}</td>
                    </tr>
                  </tbody>
                </table>

@@ -112,37 +112,8 @@
                 <a class="aa-cart-link" href=" {{ url('/cart') }} ">
                   <span class="fa fa-shopping-basket"></span>
                   <span class="aa-cart-title">CARRITO DE COMPRAS</span>
-                  <span class="aa-cart-notify">2</span>
+                 <span class="aa-cart-notify">{{$car}}</span>
                 </a>
-                <div class="aa-cartbox-summary">
-                  <ul>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src=" {{ url('/assets/img/woman-small-2.jpg') }}" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Nombre del producto</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src=" {{ url('/assets/img/woman-small-1.jpg') }}" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Nombre del producto</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>                    
-                    <li>
-                      <span class="aa-cartbox-total-title">
-                        Total
-                      </span>
-                      <span class="aa-cartbox-total-price">
-                        $500
-                      </span>
-                    </li>
-                  </ul>
-                  <a class="aa-cartbox-checkout aa-primary-btn" href=" {{ url('/checkout') }} ">Checkout</a>
-                </div>
               </div>
               <!-- / cart box -->
               <!-- search box -->
@@ -202,6 +173,7 @@
     </div>
   </section>
   <!-- / menu -->  
+  @include('flash-message') 
 
  <!-- Cart view section -->
  <section id="cart-view">
@@ -218,64 +190,27 @@
                         <th></th>
                         <th></th>
                         <th>Producto</th>
+                        <th>Descripción</th>
                         <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Total</th>
                       </tr>
                     </thead>
                     <tbody>
+                    @foreach($arrayProducts as $key=>$product)
                       <tr>
                         <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
-                        <td><a href="#"><img src="img/man/polo-shirt-1.png" alt="img"></a></td>
-                        <td><a class="aa-cart-title" href="#">Camiseta Polo</a></td>
-                        <td>$250</td>
-                        <td><input class="aa-cart-quantity" type="number" value="1"></td>
-                        <td>$250</td>
+                        <td><a href="{{ url('/product-detail/' . $product->product_id) }}"><img src="{{$product->product_pic1}}" alt="img"></a></td>
+                        <td><a class="aa-cart-title" href="{{ url('/product-detail/' . $product->product_id) }}">{{$product->product_name}}</a></td>
+                        <td>{{$product->product_desc_short}}</td>
+                        <td>${{$product->product_price}}</td>
                       </tr>
-                      <tr>
-                        <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
-                        <td><a href="#"><img src="img/man/polo-shirt-2.png" alt="img"></a></td>
-                        <td><a class="aa-cart-title" href="#">Camiseta Polo</a></td>
-                        <td>$150</td>
-                        <td><input class="aa-cart-quantity" type="number" value="1"></td>
-                        <td>$150</td>
-                      </tr>
-                      <tr>
-                        <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
-                        <td><a href="#"><img src="img/man/polo-shirt-3.png" alt="img"></a></td>
-                        <td><a class="aa-cart-title" href="#">Camiseta Polo</a></td>
-                        <td>$50</td>
-                        <td><input class="aa-cart-quantity" type="number" value="1"></td>
-                        <td>$50</td>
-                      </tr>
-                      <tr>
-                        <td colspan="6" class="aa-cart-view-bottom">
-                          <div class="aa-cart-coupon">
-                            <input class="aa-coupon-code" type="text" placeholder="Cupón">
-                            <input class="aa-cart-view-btn" type="submit" value="Aplicar Cupón">
-                          </div>
-                        </td>
-                      </tr>
+                    @endforeach
                       </tbody>
                   </table>
                 </div>
              </form>
              <!-- Cart Total view -->
-             <div class="cart-view-total">
-               <h4>Total</h4>
-               <table class="aa-totals-table">
-                 <tbody>
-                   <tr>
-                     <th>Subtotal</th>
-                     <td>$450</td>
-                   </tr>
-                   <tr>
-                     <th>Total</th>
-                     <td>$450</td>
-                   </tr>
-                 </tbody>
-               </table>
-               <a href=" {{ url('/checkout') }} " class="aa-cart-view-btn">Pagar</a>
+             <div class="cart-view-total">              
+               <a href=" {{ url('/checkout') }} " class="aa-cart-view-btn">Checkout</a>
              </div>
            </div>
          </div>

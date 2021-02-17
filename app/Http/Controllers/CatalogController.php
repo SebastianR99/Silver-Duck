@@ -2,73 +2,107 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
 use App\Models\Products;
+use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Expr\New_;
 
 class CatalogController extends Controller
 {
-    public function getProduct(){
+    public function getProduct()
+    {
+        $identificacion = Auth::id();
+        $car = DB::table('carts')->where('cart_user',$identificacion)->count();
         $products = Products::All();
-        return view('product', array('arrayProducts'=>$products));
+        return view('product', array('arrayProducts'=>$products),array('car'=>$car));
     }
     //
-    public function getProductMen(){
+    public function getProductMen()
+    {
+        $identificacion = Auth::id();
+        $car = DB::table('carts')->where('cart_user',$identificacion)->count();
         $products = Products::where('product_genre', 'male')
                             ->get();
-        return view('Men.product-men', array('arrayProducts'=>$products));
+        return view('Men.product-men', array('arrayProducts'=>$products),array('car'=>$car));
     }
     //
-    public function getProductMenCasual(){
+    public function getProductMenCasual()
+    {
+        $identificacion = Auth::id();
+        $car = DB::table('carts')->where('cart_user',$identificacion)->count();
         $products = Products::where('product_genre', 'male')
                             ->where('product_type', 'casual')
                             ->get();
-        return view('Men.product-men-casual', array('arrayProducts'=>$products));
+        return view('Men.product-men-casual', array('arrayProducts'=>$products),array('car'=>$car));
     }
     //
-    public function getProductMenSport(){
+    public function getProductMenSport()
+    {
+        $identificacion = Auth::id();
+        $car = DB::table('carts')->where('cart_user',$identificacion)->count();
         $products = Products::where('product_genre','male')
                             ->where('product_type','sport')
                             ->get();
-        return view('Men.product-men-sport', array('arrayProducts'=>$products));
+        return view('Men.product-men-sport', array('arrayProducts'=>$products),array('car'=>$car));
     }
     //
-    public function getProductMenFormal(){
+    public function getProductMenFormal()
+    {
+        $identificacion = Auth::id();
+        $car = DB::table('carts')->where('cart_user',$identificacion)->count();
         $products = Products::where('product_genre','male')
                             ->where('product_type', 'formal')
                             ->get();
-        return view('Men.product-men-formal', array('arrayProducts'=>$products));
+        return view('Men.product-men-formal', array('arrayProducts'=>$products),array('car'=>$car));
     }
     //
-    public function getProductWomen(){
+    public function getProductWomen()
+    {
+        $identificacion = Auth::id();
+        $car = DB::table('carts')->where('cart_user',$identificacion)->count();
         $products = Products::where('product_genre', 'female')
                             ->get();
-        return view('Women.product-women', array('arrayProducts'=>$products));
+        return view('Women.product-women', array('arrayProducts'=>$products),array('car'=>$car));
     }
     //
-    public function getProductWomenCasual(){
+    public function getProductWomenCasual()
+    {
+        $identificacion = Auth::id();
+        $car = DB::table('carts')->where('cart_user',$identificacion)->count();
         $products = Products::where('product_genre', 'female')
                             ->where('product_type', 'casual')
                             ->get();
-        return view('Women.product-women-casual', array('arrayProducts'=>$products));
+        return view('Women.product-women-casual', array('arrayProducts'=>$products),array('car'=>$car));
     }
     //
-    public function getProductWomenSport(){
+    public function getProductWomenSport()
+    {
+        $identificacion = Auth::id();
+        $car = DB::table('carts')->where('cart_user',$identificacion)->count();
         $products = Products::where('product_genre', 'female')
                             ->where('product_type', 'sport')
                             ->get();
-        return view('Women.product-women-sport', array('arrayProducts'=>$products));
+        return view('Women.product-women-sport', array('arrayProducts'=>$products),array('car'=>$car));
     }
     //
-    public function getProductWomenFormal(){
+    public function getProductWomenFormal()
+    {
+        $identificacion = Auth::id();
+        $car = DB::table('carts')->where('cart_user',$identificacion)->count();
         $products = Products::where('product_genre', 'female')
                             ->where('product_type', 'formal')
                             ->get();
-        return view('Women.product-women-formal', array('arrayProducts'=>$products));
+        return view('Women.product-women-formal', array('arrayProducts'=>$products),array('car'=>$car));
     }
     //
     
     //
-    public function getDetail($product_id){
+    public function getDetail($product_id)
+    {
+        
         $product = Products::where('product_id', $product_id)
                            ->first();
         $genre = $product->product_genre;
@@ -78,12 +112,21 @@ class CatalogController extends Controller
                            ->where('product_id', '!=', $product_id)
                            ->take(4)
                            ->get();
-        return view('product-detail', array('product'=>$product), array('arraySimilars'=>$similars));
+        return view('product-detail',array('product'=>$product), array('arraySimilars'=>$similars));
     }
     //
-    public function getCart(){
-        //$products = Products::All();
-        return view('cart'/*, array('arrayProducts'=>$products)*/);
+    public function getCart()
+    {
+        $identificacion = Auth::id();
+        $car = DB::table('carts')->where('cart_user',$identificacion)->count();
+        $usuario = Auth::id();
+        $products = DB::table('carts')->join('users','carts.cart_user','=','users.id')
+                                      ->join('products','carts.cart_product','=','products.product_id')
+                                      ->select('products.*')
+                                      ->where('carts.cart_user',$usuario)
+                                      ->get();
+        return view('cart', array('arrayProducts'=>$products),array('car'=>$car));
+        
     }
     //
     public function getCheckout(){
@@ -94,5 +137,33 @@ class CatalogController extends Controller
     public function getHomeno()
     {
         return view('no.indexno');
+    }
+    
+    public function loginNo()
+    {
+       return back()->with(['error'=>'Para utilizar esta función, por favor inicie sesión']);
+    }
+     
+    public function addProduct(Request $request)
+    {
+        if(Auth::check())
+        {
+            $usuario = Auth::id();
+            $carrito = New Cart();
+            $carrito->cart_user = $usuario;
+            $carrito->cart_product = $request->product;
+            $carrito->save();
+            return back();
+        }
+        else
+        {
+           return redirect('/login-no');
+        }
+    }
+
+    public function deleteProduct(Request $request)
+    {
+        $producto = $request->product;
+        DB::table('carts')->where('cart_product',$producto)->delete();
     }
 }

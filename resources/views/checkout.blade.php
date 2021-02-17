@@ -109,37 +109,8 @@
                 <a class="aa-cart-link" href="#">
                   <span class="fa fa-shopping-basket"></span>
                   <span class="aa-cart-title">CARRITO DE COMPRAS</span>
-                  <span class="aa-cart-notify">2</span>
+                 <span class="aa-cart-notify">{{$car}}</span>
                 </a>
-                <div class="aa-cartbox-summary">
-                  <ul>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src=" {{ url('/assets/img/woman-small-2.jpg') }}" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Nombre del producto</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src=" {{ url('/assets/img/woman-small-1.jpg') }}" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Nombre del producto</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>                    
-                    <li>
-                      <span class="aa-cartbox-total-title">
-                        Total
-                      </span>
-                      <span class="aa-cartbox-total-price">
-                        $500
-                      </span>
-                    </li>
-                  </ul>
-                  <a class="aa-cartbox-checkout aa-primary-btn" href="checkout.html">Checkout</a>
-                </div>
               </div>
               <!-- / cart box -->
               <!-- search box -->
@@ -181,14 +152,12 @@
                 <ul class="dropdown-menu">                
                   <li><a href="{{ url('/Men/product-men-casual') }}">Casual</a></li>
                   <li><a href="{{ url('/Men/product-men-sport') }}">Deportivo</a></li>
-                  <li><a href="{{ url('/Men/product-men-formal') }}">Formal</a></li>
                 </ul>
               </li>
               <li><a href="{{ url('/Women/product-women') }}"> Mujer <span class="caret"></span></a>
                 <ul class="dropdown-menu">  
                   <li><a href="{{ url('/Women/product-women-casual') }}">Casual</a></li>
                   <li><a href="{{ url('/Women/product-women-sport') }}">Deportivo</a></li>
-                  <li><a href="{{ url('/Women/product-women-formal') }}">Formal</a></li>
                 </ul>
               </li>
               <li><a href="{{ url('/contact') }}">Contacto</a></li>
@@ -200,7 +169,8 @@
     </div>
   </section>
   <!-- / menu -->  
- 
+  @include('flash-message') 
+
 
  <!-- Cart view section -->
  <section id="checkout">

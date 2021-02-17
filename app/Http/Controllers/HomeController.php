@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Models\Products;
 
 use Illuminate\Http\Request;
@@ -27,12 +29,13 @@ class HomeController extends Controller
         return view('index');
     }
 
-    public function getHome() {
+    public function getHome() 
+    {
+        $identificacion = Auth::id();
+        $car = DB::table('carts')->where('cart_user',$identificacion)->count();
         $products = Products::All();
-        return view('index', array('arrayProducts'=>$products)); 
+        return view('index', array('arrayProducts'=>$products),array('car'=>$car)); 
     }
     //
-    public function getContact(){
-        return view('contact');
-    }
+  
 }

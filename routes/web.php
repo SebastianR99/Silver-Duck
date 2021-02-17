@@ -29,7 +29,7 @@ Route::get('/no', [CatalogController::class, 'getHomeno'] )->name('no');
 //
 Route::get('/logout', [LoginController::class, 'logout'] );
 //
-Route::get('/contact', [HomeController::class, 'getContact'] );
+Route::get('/contact', [UserController::class, 'getContact'] );
 //
 Route::get('/product', [CatalogController::class, 'getProduct']);
 //
@@ -62,6 +62,14 @@ Route::get('/wishlist', [UserController::class, 'getWishlist'] );
 Route::get('/user-form', [UserController::class, 'getForm'] );
 //
 Route::post('/user-form-post', [UserController::class, 'postForm'] );
+//
+Route::get('/prueba', [CatalogController::class, 'prueba']);
+//
+Route::get('/login-no', [CatalogController::class, 'loginNo']);
+//
+Route::post('/post-product', [CatalogController::class, 'addProduct']);
+//
+Route::post('/delete-product', [CatalogController::class, 'deleteProduct']);
 
 
 Auth::routes();

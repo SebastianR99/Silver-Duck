@@ -112,37 +112,8 @@
                 <a class="aa-cart-link" href=" {{ url('/cart') }} ">
                   <span class="fa fa-shopping-basket"></span>
                   <span class="aa-cart-title">CARRITO DE COMPRAS</span>
-                  <span class="aa-cart-notify">2</span>
+                 <span class="aa-cart-notify">3</span>
                 </a>
-                <div class="aa-cartbox-summary">
-                  <ul>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src=" {{ url('/assets/img/woman-small-2.jpg') }}" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Nombre del producto</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src=" {{ url('/assets/img/woman-small-1.jpg') }}" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Nombre del producto</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>                    
-                    <li>
-                      <span class="aa-cartbox-total-title">
-                        Total
-                      </span>
-                      <span class="aa-cartbox-total-price">
-                        $500
-                      </span>
-                    </li>
-                  </ul>
-                  <a class="aa-cartbox-checkout aa-primary-btn" href=" {{ url('/checkout') }} ">Checkout</a>
-                </div>
               </div>
               <!-- / cart box -->
               <!-- search box -->
@@ -203,7 +174,7 @@
   </section>
   <!-- / menu -->
  
-
+  @include('flash-message')
   <!-- product category -->
   <section id="aa-product-details">
     <div class="container">
@@ -261,7 +232,11 @@
                       </p>
                     </div>
                     <div class="aa-prod-view-bottom">
-                      <a class="aa-add-to-cart-btn" href="#">Añadir al carrito</a>
+                      <form action='{{url ('/post-product') }}' method="POST">
+                        @csrf
+                        <input id='product' name='product' type='hidden' value='{{$product->product_id}}'>
+                        <button type="submit" class="aa-add-to-cart-btn">Añadir al carrito</button>
+                      </form>
                       <a class="aa-add-to-cart-btn" href="#">Añadir a la Wishlist</a>
                     </div>
                   </div>
@@ -290,18 +265,12 @@
                 @foreach ($arraySimilars as $key => $similars)
                 <li>
                   <figure>
-                    <a class="aa-product-img" href="#"><img style="width: 100%; height: 90%;"  src=" {{ $similars->product_pic1 }} " alt="polo shirt img"></a>
-                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Añadir al carrito</a>
+                    <a class="aa-product-img" href="{{ url('/product-detail/' . $similars->product_id) }}"><img style="width: 100%; height: 90%;"  src=" {{ $similars->product_pic1 }} " alt="polo shirt img"></a>
                      <figcaption>
                       <h4 class="aa-product-title"><a href="#"> {{ $similars->product_name }} </a></h4>
-                      <span class="aa-product-price"> {{ $similars->product_price }} </span>
+                      <span class="aa-product-price"> ${{ $similars->product_price }} </span>
                     </figcaption>
                   </figure>                     
-                  <div class="aa-product-hvr-content">
-                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                    <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                    <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
-                  </div>
                   <!-- product badge -->
                   <span class="aa-badge aa-sale" href="#">SALE!</span>
                 </li>

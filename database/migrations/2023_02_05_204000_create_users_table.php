@@ -18,6 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('full_name')->default('');
+            $table->string('full_lastname')->default('');
             $table->string('user_dpto')->default('');
             $table->string('user_city')->default('');
             $table->string('user_address')->default('');
