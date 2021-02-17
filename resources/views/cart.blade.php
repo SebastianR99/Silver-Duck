@@ -118,8 +118,9 @@
               <!-- / cart box -->
               <!-- search box -->
               <div class="aa-search-box">
-                <form action="">
-                  <input type="text" name="" id="" placeholder="Busque aquí ej: 'camiseta' ">
+                <form action="{{ url('/search-product') }}" method='POST'>
+                  @csrf
+                  <input type="text" name="busqueda" id="busqueda" placeholder="Busque aquí ej: ´camiseta´ ">
                   <button type="submit"><span class="fa fa-search"></span></button>
                 </form>
               </div>

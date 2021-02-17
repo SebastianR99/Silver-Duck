@@ -108,8 +108,9 @@
               <!-- / cart box -->
               <!-- search box -->
               <div class="aa-search-box">
-                <form action="">
-                  <input type="text" name="" id="" placeholder="Search here ex. 'man' ">
+                <form action="{{ url('/search-product') }}" method='POST'>
+                  @csrf
+                  <input type="text" name="busqueda" id="busqueda" placeholder="Busque aquí ej: ´camiseta´ ">
                   <button type="submit"><span class="fa fa-search"></span></button>
                 </form>
               </div>
@@ -191,13 +192,6 @@
             <div class="aa-product-catg-head">
               <div class="aa-product-catg-head-left">
                 <form action="" class="aa-sort-form">
-                  <label for="">Sort by</label>
-                  <select name="">
-                    <option value="1" selected="Default">Default</option>
-                    <option value="2">Name</option>
-                    <option value="3">Price</option>
-                    <option value="4">Date</option>
-                  </select>
                 </form>
               </div>
               <div class="aa-product-catg-head-right">
@@ -212,7 +206,6 @@
                   <li>
                     <figure>
                      <a class="" href="{{ url('/product-detail/' . $products->product_id) }}"><img style="width: 90% fit-content; height: 90%;" src="{{$products->product_pic1}}" alt="polo shirt img"></a>
-                     <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                       <figcaption>
                        <h4 class="aa-product-title"><a href="#">{{ $products->product_name }}</a></h4>
                        <span class="aa-product-price">{{ $products->product_price }}</span>
@@ -312,27 +305,6 @@
               </div>
               <!-- / quick view modal -->   
             </div>
-            <div class="aa-product-catg-pagination">
-              <nav>
-                <ul class="pagination">
-                  <li>
-                    <a href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                  </li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li>
-                    <a href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-4 col-md-pull-9">
@@ -347,33 +319,33 @@
             </div>
             <!-- single sidebar -->
             <div class="aa-sidebar-widget">
-              <h3>Tags</h3>
-              <div class="tag-cloud">
-                <a href="#">Fashion</a>
-                <a href="#">Ecommerce</a>
-                <a href="#">Shop</a>
-                <a href="#">Hand Bag</a>
-                <a href="#">Laptop</a>
-                <a href="#">Head Phone</a>
-                <a href="#">Pen Drive</a>
-              </div>
             </div>
             <!-- single sidebar -->
             <div class="aa-sidebar-widget">
               <h3>Más populares</h3>
               <div class="aa-recently-views">
-                <ul>
-                  @foreach ($arrayProducts as $key => $products)
-                    @if ($products->product_stock <= 3)
-                      <li>
-                        <a href="#" class="aa-cartbox-img"><img alt="img" src="{{ $products->product_pic1 }}"></a>
-                        <div class="aa-cartbox-info">
-                          <h4><a href="#"> {{ $products->product_name }} </a></h4>
-                         <p> {{ $products->product_price }} </p>
-                        </div>                    
-                      </li>       
-                    @endif
-                  @endforeach                               
+              <ul>
+                  <li>
+                    <a href="#" class="aa-cartbox-img"><img alt="img" src="{{ $arrayProducts[2]->product_pic1 }}"></a>
+                    <div class="aa-cartbox-info">
+                        <h4><a href="#"> {{ $arrayProducts[2]->product_name }} </a></h4>
+                        <p> ${{$arrayProducts[2]->product_price }} </p>
+                    </div>                    
+                  </li>     
+                  <li>
+                    <a href="#" class="aa-cartbox-img"><img alt="img" src="{{ $arrayProducts[1]->product_pic1 }}"></a>
+                    <div class="aa-cartbox-info">
+                        <h4><a href="#"> {{ $arrayProducts[1]->product_name }} </a></h4>
+                        <p> ${{  $arrayProducts[1]->product_price }} </p>
+                    </div>                    
+                  </li>     
+                  <li>
+                    <a href="#" class="aa-cartbox-img"><img alt="img" src="{{ $arrayProducts[3]->product_pic1 }}"></a>
+                    <div class="aa-cartbox-info">
+                        <h4><a href="#"> {{ $arrayProducts[3]->product_name }} </a></h4>
+                        <p> ${{ $arrayProducts[3]->product_price }} </p>
+                    </div>                    
+                  </li>                                  
                 </ul>
               </div>                            
             </div>

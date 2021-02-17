@@ -109,14 +109,15 @@
                 <a class="aa-cart-link" href="#">
                   <span class="fa fa-shopping-basket"></span>
                   <span class="aa-cart-title">CARRITO DE COMPRAS</span>
-                 <span class="aa-cart-notify">{{$car}}</span>
+                 <span class="aa-cart-notify">3</span>
                 </a>
               </div>
               <!-- / cart box -->
               <!-- search box -->
               <div class="aa-search-box">
-                <form action="">
-                  <input type="text" name="" id="" placeholder="Busque aquí ej: 'camiseta' ">
+                <form action="{{ url('/search-product') }}" method='POST'>
+                  @csrf
+                  <input type="text" name="busqueda" id="busqueda" placeholder="Busque aquí ej: ´camiseta´ ">
                   <button type="submit"><span class="fa fa-search"></span></button>
                 </form>
               </div>
@@ -178,46 +179,12 @@
      <div class="row">
        <div class="col-md-12">
         <div class="checkout-area">
-          <form action="">
+          <form action="{{   url('/end-checkout')   }}" method="GET">
+          @csrf
             <div class="row">
               <div class="col-md-8">
                 <div class="checkout-left">
                   <div class="panel-group" id="accordion">
-                    <!-- Coupon section -->
-                    <div class="panel panel-default aa-checkout-coupon">
-                      <div class="panel-heading">
-                        <h4 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                            Tienes un Coupón?
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="collapseOne" class="panel-collapse collapse in">
-                        <div class="panel-body">
-                          <input type="text" placeholder="Codigo del cupon" class="aa-coupon-code">
-                          <input type="submit" value="Aplicar cupón" class="aa-browse-btn">
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Login section -->
-                    <div class="panel panel-default aa-checkout-login">
-                      <div class="panel-heading">
-                        <h4 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                            Incio de Sesion
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="collapseTwo" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <input type="text" placeholder="Correo Electrónico">
-                          <input type="password" placeholder="Contraseña">
-                          <button type="submit" class="aa-browse-btn">Iniciar Sesion</button>
-                          <label for="rememberme"><input type="checkbox" id="rememberme"> Recuérdame </label>
-                          <p class="aa-lost-password"><a href="#">Olvidaste tu contraseña?</a></p>
-                        </div>
-                      </div>
-                    </div>
                     <!-- Billing Details -->
                     <div class="panel panel-default aa-checkout-billaddress">
                       <div class="panel-heading">
@@ -232,53 +199,43 @@
                           <div class="row">
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                <input type="text" placeholder="Nombre*">
+                                <input type="text" placeholder="Nombre*" value="{{$arrayPago[0]->full_name}}">
                               </div>                             
                             </div>
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                <input type="text" placeholder="Apellido*">
+                                <input type="text" placeholder="Apellido*"  value="{{$arrayPago[0]->full_lastname}}">
                               </div>
                             </div>
                           </div>  
                           <div class="row">
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                <input type="email" placeholder="Correo Electrónico">
+                                <input type="email" placeholder="Correo Electrónico"  value="{{$arrayPago[0]->email}}">
                               </div>                             
                             </div>
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                <input type="tel" placeholder="Telefono*">
+                                <input type="tel" placeholder="Telefono*"  value="{{$arrayPago[0]->user_phone}}">
                               </div>
                             </div>
-                          </div> 
+                          </div>  
                           <div class="row">
                             <div class="col-md-12">
                               <div class="aa-checkout-single-bill">
-                                <textarea cols="8" rows="3">Dirección*</textarea>
-                              </div>                             
-                            </div>                            
-                          </div>   
-                          <div class="row">
-                            <div class="col-md-12">
-                              <div class="aa-checkout-single-bill">
-                                <select>
-                                  <option value="0">Selecciona tu pais</option>
-                                  <option value="1">Colombia</option>
-                                </select>
-                              </div>                             
+                              <input type="text" placeholder="Dirección"  value="{{$arrayPago[0]->user_address}}">
+                              </div>                              
                             </div>                            
                           </div>
                           <div class="row">
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                <input type="text" placeholder="Dirección">
+                              <input type="text" placeholder="Ciudad*"  value="{{$arrayPago[0]->user_city}}">
                               </div>                             
                             </div>
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                <input type="text" placeholder="Ciudad*">
+                              <input type="text" placeholder="Departamento"  value="{{$arrayPago[0]->user_dpto}}">
                               </div>
                             </div>
                           </div>   
@@ -312,41 +269,35 @@
                         </tr>
                       </thead>
                       <tbody>
+                      @foreach($arrayPago as $key=>$pago)
                         <tr>
-                          <td>Blusa <strong> x  1</strong></td>
-                          <td>$150</td>
+                          <td>{{$pago->product_name}}</td>
+                          <td>${{$pago->product_price}}</td>
                         </tr>
-                        <tr>
-                          <td>Camiste Polo <strong> x  1</strong></td>
-                          <td>$250</td>
-                        </tr>
-                        <tr>
-                          <td>Zapatos <strong> x  1</strong></td>
-                          <td>$350</td>
-                        </tr>
+                      @endforeach
                       </tbody>
                       <tfoot>
                         <tr>
                           <th>Subtotal</th>
-                          <td>$750</td>
+                          <td>${{$subtotal}}.000</td>
                         </tr>
                          <tr>
                           <th>Impuesto</th>
-                          <td>$35</td>
+                          <td>${{$iva}}.000</td>
                         </tr>
                          <tr>
                           <th>Total</th>
-                          <td>$785</td>
+                          <td>${{$total}}.000</td>
                         </tr>
                       </tfoot>
                     </table>
                   </div>
                   <h4>Métodos de pago</h4>
-                  <div class="aa-payment-method">                    
-                    <label for="cashdelivery"><input type="radio" id="cashdelivery" name="optionsRadios"> Pago en efectivo </label>
-                    <label for="paypal"><input type="radio" id="paypal" name="optionsRadios" checked> Trasferencia </label>
-                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark">    
-                    <input type="submit" value="Realizar pedido" class="aa-browse-btn">                
+                  <div class="aa-payment-method">  
+                    <label for="cashdelivery"><input type="radio" id="cashdelivery" name="optionsRadios"> Cash on Delivery </label>
+                    <label for="paypal"><input type="radio" id="paypal" name="optionsRadios" checked> Via Paypal </label>
+                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark"> 
+                    <button class="aa-browse-btn" type="submit" > Realizar pedido</button>                    
                   </div>
                 </div>
               </div>

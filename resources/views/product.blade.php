@@ -115,8 +115,9 @@
               <!-- / cart box -->
               <!-- search box -->
               <div class="aa-search-box">
-                <form action="">
-                  <input type="text" name="" id="" placeholder="Search here ex. 'man' ">
+                <form action="{{ url('/search-product') }}" method='POST'>
+                  @csrf
+                  <input type="text" name="busqueda" id="busqueda" placeholder="Busque aquí ej: ´camiseta´ ">
                   <button type="submit"><span class="fa fa-search"></span></button>
                 </form>
               </div>
@@ -197,21 +198,6 @@
         <div class="col-lg-9 col-md-9 col-sm-8 col-md-push-3">
           <div class="aa-product-catg-content">
             <div class="aa-product-catg-head">
-              <div class="aa-product-catg-head-left">
-                <form action="" class="aa-sort-form">
-                  <label for="">Sort by</label>
-                  <select name="">
-                    <option value="1" selected="Default">Default</option>
-                    <option value="2">Name</option>
-                    <option value="3">Price</option>
-                    <option value="4">Date</option>
-                  </select>
-                </form>
-              </div>
-              <div class="aa-product-catg-head-right">
-                <a id="grid-catg" href="#"><span class="fa fa-th"></span></a>
-                <a id="list-catg" href="#"><span class="fa fa-list"></span></a>
-              </div>
             </div>
             <div class="aa-product-catg-body">
               <ul class="aa-product-catg">
@@ -220,18 +206,12 @@
                   <li>
                     <figure>
                      <a class="" href="{{ url('/product-detail/' . $products->product_id) }}"><img style="width: 90% fit-content; height: 90%;" src="{{$products->product_pic1}}" alt="polo shirt img"></a>
-                     <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                       <figcaption>
                        <h4 class="aa-product-title"><a href="#">{{ $products->product_name }}</a></h4>
                        <span class="aa-product-price">{{ $products->product_price }}</span>
                         <p class="aa-product-descrip">{{ $products->product_desc_short }}</p>
                      </figcaption>
                     </figure>                         
-                    <div class="aa-product-hvr-content">
-                     <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                      <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                      <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
-                   </div>
                    <!-- product badge -->
                     <span class="aa-badge aa-sale" href="#">SALE!</span>
                  </li>
@@ -244,39 +224,8 @@
                     <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                       <div class="row">
-                        <!-- Modal view slider -->
-                        <div class="col-md-6 col-sm-6 col-xs-12">                              
-                          <div class="aa-product-view-slider">                                
-                            <div class="simpleLens-gallery-container" id="demo-1">
-                              <div class="simpleLens-container">
-                                  <div class="simpleLens-big-image-container">
-                                      <a class="simpleLens-lens-image" data-lens-image="img/view-slider/large/polo-shirt-1.png">
-                                          <img src="img/view-slider/medium/polo-shirt-1.png" class="simpleLens-big-image">
-                                      </a>
-                                  </div>
-                              </div>
-                              <div class="simpleLens-thumbnails-container">
-                                  <a href="#" class="simpleLens-thumbnail-wrapper"
-                                     data-lens-image="img/view-slider/large/polo-shirt-1.png"
-                                     data-big-image="img/view-slider/medium/polo-shirt-1.png">
-                                      <img src="img/view-slider/thumbnail/polo-shirt-1.png">
-                                  </a>                                    
-                                  <a href="#" class="simpleLens-thumbnail-wrapper"
-                                     data-lens-image="img/view-slider/large/polo-shirt-3.png"
-                                     data-big-image="img/view-slider/medium/polo-shirt-3.png">
-                                      <img src="img/view-slider/thumbnail/polo-shirt-3.png">
-                                  </a>
-
-                                  <a href="#" class="simpleLens-thumbnail-wrapper"
-                                     data-lens-image="img/view-slider/large/polo-shirt-4.png"
-                                     data-big-image="img/view-slider/medium/polo-shirt-4.png">
-                                      <img src="img/view-slider/thumbnail/polo-shirt-4.png">
-                                  </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- Modal view content -->
+                       
+                       
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <div class="aa-product-view-content">
                             <h3>T-Shirt</h3>
@@ -320,27 +269,7 @@
               </div>
               <!-- / quick view modal -->   
             </div>
-            <div class="aa-product-catg-pagination">
-              <nav>
-                <ul class="pagination">
-                  <li>
-                    <a href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                  </li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li>
-                    <a href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+           
           </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-4 col-md-pull-9">
@@ -353,35 +282,31 @@
                 <li><a href="{{ url('/Women/product-women') }}">Mujer</a></li>
               </ul>
             </div>
-            <!-- single sidebar -->
-            <div class="aa-sidebar-widget">
-              <h3>Tags</h3>
-              <div class="tag-cloud">
-                <a href="#">Fashion</a>
-                <a href="#">Ecommerce</a>
-                <a href="#">Shop</a>
-                <a href="#">Hand Bag</a>
-                <a href="#">Laptop</a>
-                <a href="#">Head Phone</a>
-                <a href="#">Pen Drive</a>
-              </div>
-            </div>
-            <!-- single sidebar -->
             <div class="aa-sidebar-widget">
               <h3>Más populares</h3>
               <div class="aa-recently-views">
                 <ul>
-                  @foreach ($arrayProducts as $key => $products)
-                    @if ($products->product_stock <= 3)
-                      <li>
-                        <a href="#" class="aa-cartbox-img"><img alt="img" src="{{ $products->product_pic1 }}"></a>
-                        <div class="aa-cartbox-info">
-                          <h4><a href="#"> {{ $products->product_name }} </a></h4>
-                         <p> {{ $products->product_price }} </p>
-                        </div>                    
-                      </li>       
-                    @endif
-                  @endforeach                               
+                  <li>
+                    <a href="#" class="aa-cartbox-img"><img alt="img" src="{{ $arrayProducts[2]->product_pic1 }}"></a>
+                    <div class="aa-cartbox-info">
+                        <h4><a href="#"> {{ $arrayProducts[2]->product_name }} </a></h4>
+                        <p> ${{$arrayProducts[2]->product_price }} </p>
+                    </div>                    
+                  </li>     
+                  <li>
+                    <a href="#" class="aa-cartbox-img"><img alt="img" src="{{ $arrayProducts[7]->product_pic1 }}"></a>
+                    <div class="aa-cartbox-info">
+                        <h4><a href="#"> {{ $arrayProducts[7]->product_name }} </a></h4>
+                        <p> ${{  $arrayProducts[7]->product_price }} </p>
+                    </div>                    
+                  </li>     
+                  <li>
+                    <a href="#" class="aa-cartbox-img"><img alt="img" src="{{ $arrayProducts[9]->product_pic1 }}"></a>
+                    <div class="aa-cartbox-info">
+                        <h4><a href="#"> {{ $arrayProducts[9]->product_name }} </a></h4>
+                        <p> ${{ $arrayProducts[9]->product_price }} </p>
+                    </div>                    
+                  </li>                                  
                 </ul>
               </div>                            
             </div>

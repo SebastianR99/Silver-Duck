@@ -70,7 +70,10 @@ Route::get('/login-no', [CatalogController::class, 'loginNo']);
 Route::post('/post-product', [CatalogController::class, 'addProduct']);
 //
 Route::post('/delete-product', [CatalogController::class, 'deleteProduct']);
-
+//
+Route::get('/end-checkout', [CatalogController::class, 'postCheckout']);
+//
+Route::post('/search-product', [CatalogController::class, 'productSearch']);
 
 Auth::routes();
 

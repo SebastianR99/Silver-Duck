@@ -13,7 +13,8 @@ class UserController extends Controller
     public function getContact()
     {
         $identificacion = Auth::id();
-        $car = DB::table('carts')->where('cart_user',$identificacion)->count();
+        $car = DB::table('carts')->where('cart_user',$identificacion)
+                                 ->where('cart_bought',false)->count();
         return view('contact',array('car'=>$car));
     }
     //
@@ -24,7 +25,8 @@ class UserController extends Controller
     public function getAccount()
     {
         $identificacion = Auth::id();
-        $car = DB::table('carts')->where('cart_user',$identificacion)->count();
+        $car = DB::table('carts')->where('cart_user',$identificacion)
+                                 ->where('cart_bought',false)->count();
         $user = DB::table('users')->find($identificacion);
         return view('user',array('user'=>$user),array('car'=>$car));
     }
@@ -32,7 +34,8 @@ class UserController extends Controller
     public function getForm()
     {
         $identificacion = Auth::id();
-        $car = DB::table('carts')->where('cart_user',$identificacion)->count();
+        $car = DB::table('carts')->where('cart_user',$identificacion)
+                                 ->where('cart_bought',false)->count();
         return view('user-form',array('car'=>$car));
     }
     //

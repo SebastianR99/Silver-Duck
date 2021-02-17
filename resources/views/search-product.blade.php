@@ -176,14 +176,14 @@
 
   <!-- catg header banner section -->
   <section id="aa-catg-head-banner">
-   <img src="{{ url('/assets/img/fashion/fashion-header-bg-women.jpg') }}" alt="fashion img">
+   <img style="max-width: 900px; max-height: 300px;" src="{{ url('/assets/img/fashion/fashion-header-bg-1.jpg') }}" alt="fashion img">
    <div class="aa-catg-head-banner-area">
      <div class="container">
       <div class="aa-catg-head-banner-content">
-        <h2>Todo para mujer</h2>
+        <h2>Catálogo para hombre y mujer</h2>
         <ol class="breadcrumb">
           <li><a href="{{ url('/') }}">Inicio</a></li>         
-          <li class="active">Mujer</li>
+          <li class="active">Todo</li>
         </ol>
       </div>
      </div>
@@ -199,6 +199,15 @@
           <div class="aa-product-catg-content">
             <div class="aa-product-catg-head">
               <div class="aa-product-catg-head-left">
+                <form action="" class="aa-sort-form">
+                  <label for="">Sort by</label>
+                  <select name="">
+                    <option value="1" selected="Default">Default</option>
+                    <option value="2">Name</option>
+                    <option value="3">Price</option>
+                    <option value="4">Date</option>
+                  </select>
+                </form>
               </div>
               <div class="aa-product-catg-head-right">
                 <a id="grid-catg" href="#"><span class="fa fa-th"></span></a>
@@ -212,6 +221,7 @@
                   <li>
                     <figure>
                      <a class="" href="{{ url('/product-detail/' . $products->product_id) }}"><img style="width: 90% fit-content; height: 90%;" src="{{$products->product_pic1}}" alt="polo shirt img"></a>
+                     <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                       <figcaption>
                        <h4 class="aa-product-title"><a href="#">{{ $products->product_name }}</a></h4>
                        <span class="aa-product-price">{{ $products->product_price }}</span>
@@ -311,7 +321,27 @@
               </div>
               <!-- / quick view modal -->   
             </div>
-           
+            <div class="aa-product-catg-pagination">
+              <nav>
+                <ul class="pagination">
+                  <li>
+                    <a href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                  <li>
+                    <a href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-4 col-md-pull-9">
@@ -324,31 +354,35 @@
                 <li><a href="{{ url('/Women/product-women') }}">Mujer</a></li>
               </ul>
             </div>
+            <!-- single sidebar -->
+            <div class="aa-sidebar-widget">
+              <h3>Tags</h3>
+              <div class="tag-cloud">
+                <a href="#">Fashion</a>
+                <a href="#">Ecommerce</a>
+                <a href="#">Shop</a>
+                <a href="#">Hand Bag</a>
+                <a href="#">Laptop</a>
+                <a href="#">Head Phone</a>
+                <a href="#">Pen Drive</a>
+              </div>
+            </div>
+            <!-- single sidebar -->
             <div class="aa-sidebar-widget">
               <h3>Más populares</h3>
               <div class="aa-recently-views">
-              <ul>
-                  <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="{{ $arrayProducts[2]->product_pic1 }}"></a>
-                    <div class="aa-cartbox-info">
-                        <h4><a href="#"> {{ $arrayProducts[2]->product_name }} </a></h4>
-                        <p> ${{$arrayProducts[2]->product_price }} </p>
-                    </div>                    
-                  </li>     
-                  <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="{{ $arrayProducts[7]->product_pic1 }}"></a>
-                    <div class="aa-cartbox-info">
-                        <h4><a href="#"> {{ $arrayProducts[7]->product_name }} </a></h4>
-                        <p> ${{  $arrayProducts[7]->product_price }} </p>
-                    </div>                    
-                  </li>     
-                  <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="{{ $arrayProducts[9]->product_pic1 }}"></a>
-                    <div class="aa-cartbox-info">
-                        <h4><a href="#"> {{ $arrayProducts[9]->product_name }} </a></h4>
-                        <p> ${{ $arrayProducts[9]->product_price }} </p>
-                    </div>                    
-                  </li>                                  
+                <ul>
+                  @foreach ($arrayProducts as $key => $products)
+                    @if ($products->product_stock <= 3)
+                      <li>
+                        <a href="#" class="aa-cartbox-img"><img alt="img" src="{{ $products->product_pic1 }}"></a>
+                        <div class="aa-cartbox-info">
+                          <h4><a href="#"> {{ $products->product_name }} </a></h4>
+                         <p> {{ $products->product_price }} </p>
+                        </div>                    
+                      </li>       
+                    @endif
+                  @endforeach                               
                 </ul>
               </div>                            
             </div>
@@ -448,7 +482,6 @@
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div>
-
 
     
 

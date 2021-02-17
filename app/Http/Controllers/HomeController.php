@@ -32,7 +32,8 @@ class HomeController extends Controller
     public function getHome() 
     {
         $identificacion = Auth::id();
-        $car = DB::table('carts')->where('cart_user',$identificacion)->count();
+        $car = DB::table('carts')->where('cart_user',$identificacion)
+                                 ->where('cart_bought',false)->count();
         $products = Products::All();
         return view('index', array('arrayProducts'=>$products),array('car'=>$car)); 
     }

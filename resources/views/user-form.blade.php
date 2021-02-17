@@ -117,8 +117,9 @@
               <!-- / cart box -->
               <!-- search box -->
               <div class="aa-search-box">
-                <form action="">
-                  <input type="text" name="" id="" placeholder="Busque aquí ej: 'camiseta' ">
+                <form action="{{ url('/search-product') }}" method='POST'>
+                  @csrf
+                  <input type="text" name="busqueda" id="busqueda" placeholder="Busque aquí ej: ´camiseta´ ">
                   <button type="submit"><span class="fa fa-search"></span></button>
                 </form>
               </div>
@@ -149,6 +150,7 @@
             <!-- Left nav -->
             <ul class="nav navbar-nav">
               <li><a href="{{ url('/') }}">Inicio</a></li>
+              <li><a href="{{ url('/product') }}">Catálogo completo</a></li>
               <li><a href="{{ url('/Men/product-men') }}"> Hombre <span class="caret"></span></a>
                 <ul class="dropdown-menu">                
                   <li><a href="{{ url('/Men/product-men-casual') }}">Casual</a></li>
