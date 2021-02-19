@@ -151,7 +151,7 @@
           <div class="navbar-collapse collapse">
             <!-- Left nav -->
             <ul class="nav navbar-nav">
-              <li><a href="{{ url('/prueba') }}">Inicio</a></li>
+              <li><a href="{{ url('/') }}">Inicio</a></li>
               <li><a href="{{ url('/product') }}">Catálogo completo</a></li>
               <li><a href="{{ url('/Men/product-men') }}"> Hombre <span class="caret"></span></a>
                 <ul class="dropdown-menu">                
