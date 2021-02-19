@@ -85,7 +85,7 @@ class UserController extends Controller
                 ->update(['user_phone'=>$telefono]);
         }
 
-        return redirect(url ('/account') )->with('success','Datos actualizados  :3');
+        return redirect(url ('/account') )->with('eliminar','ok');
     }
     //
 

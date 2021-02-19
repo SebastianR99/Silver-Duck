@@ -113,7 +113,7 @@
                 <a class="aa-cart-link" href=" {{ url('/cart') }} ">
                   <span class="fa fa-shopping-basket"></span>
                   <span class="aa-cart-title">CARRITO DE COMPRAS</span>
-                 <span class="aa-cart-notify">3</span>
+                 <span class="aa-cart-notify">0</span>
                 </a>
               </div>
               <!-- / cart box -->
@@ -239,7 +239,6 @@
                         <input id='product' name='product' type='hidden' value='{{$product->product_id}}'>
                         <button type="submit" class="aa-add-to-cart-btn">Añadir al carrito</button>
                       </form>
-                      <a class="aa-add-to-cart-btn" href="#">Añadir a la Wishlist</a>
                     </div>
                   </div>
                 </div>
@@ -248,7 +247,6 @@
             <div class="aa-product-details-bottom">
               <ul class="nav nav-tabs" id="myTab2">
                 <li><a href="#description" data-toggle="tab">Descripción</a></li>
-                <li><a href="#review" data-toggle="tab">Reviews</a></li>                
               </ul>
 
               <!-- Tab panes -->
@@ -371,8 +369,8 @@
 
    <!-- footer -->  
    <footer id="aa-footer">
-    <!-- footer bottom -->
-    <div class="aa-footer-top">
+      <!-- footer bottom -->
+      <div class="aa-footer-top">
      <div class="container">
         <div class="row">
         <div class="col-md-12">
@@ -383,9 +381,9 @@
                   <h3>Menú Principal</h3>
                   <ul class="aa-footer-nav">
                     <li><a href="{{ url('/') }}">Inicio</a></li>
-                    <li><a href="#">Our Products</a></li>
+                    <li><a href="{{ url('/product') }}">Catálogo completo</a></li>
                     <li><a href="{{ url('/about') }}">Sobre nosotros</a></li>
-                    <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+                    <li><a href="{{ url('/contact') }}">Contactanos</a></li>
                   </ul>
                 </div>
               </div>
@@ -394,15 +392,11 @@
                   <div class="aa-footer-widget">
                     <h3>Contact Us</h3>
                     <address>
-                      <p> 25 Astor Pl, NY 10003, USA</p>
-                      <p><span class="fa fa-phone"></span>+1 212-982-4589</p>
-                      <p><span class="fa fa-envelope"></span>dailyshop@gmail.com</p>
+                      <p> Torobajo - Calle 18 Carrera 50</p>
+                      <p><span class="fa fa-phone"></span> (+057) 7244309–7311449</p>
+                      <p><span class="fa fa-envelope"></span>silverduck@gmail.com</p>
                     </address>
                     <div class="aa-footer-social">
-                      <a href="#"><span class="fa fa-facebook"></span></a>
-                      <a href="#"><span class="fa fa-twitter"></span></a>
-                      <a href="#"><span class="fa fa-google-plus"></span></a>
-                      <a href="#"><span class="fa fa-youtube"></span></a>
                     </div>
                   </div>
                 </div>

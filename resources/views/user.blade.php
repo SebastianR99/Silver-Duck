@@ -263,9 +263,9 @@
                   <h3>Menú Principal</h3>
                   <ul class="aa-footer-nav">
                     <li><a href="{{ url('/') }}">Inicio</a></li>
-                    <li><a href="#">Our Products</a></li>
+                    <li><a href="{{ url('/product') }}">Catálogo completo</a></li>
                     <li><a href="{{ url('/about') }}">Sobre nosotros</a></li>
-                    <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+                    <li><a href="{{ url('/contact') }}">Contactanos</a></li>
                   </ul>
                 </div>
               </div>
@@ -274,15 +274,11 @@
                   <div class="aa-footer-widget">
                     <h3>Contact Us</h3>
                     <address>
-                      <p> 25 Astor Pl, NY 10003, USA</p>
-                      <p><span class="fa fa-phone"></span>+1 212-982-4589</p>
-                      <p><span class="fa fa-envelope"></span>dailyshop@gmail.com</p>
+                      <p> Torobajo - Calle 18 Carrera 50</p>
+                      <p><span class="fa fa-phone"></span> (+057) 7244309–7311449</p>
+                      <p><span class="fa fa-envelope"></span>silverduck@gmail.com</p>
                     </address>
                     <div class="aa-footer-social">
-                      <a href="#"><span class="fa fa-facebook"></span></a>
-                      <a href="#"><span class="fa fa-twitter"></span></a>
-                      <a href="#"><span class="fa fa-google-plus"></span></a>
-                      <a href="#"><span class="fa fa-youtube"></span></a>
                     </div>
                   </div>
                 </div>
@@ -293,8 +289,7 @@
       </div>
      </div>
     </div>
-  </footer>
-  <!-- / footer -->
+    <!-- footer-bottom -->
   <!-- Login Modal -->  
   <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -340,6 +335,27 @@
   <script type="text/javascript" src="{{ url('/assets/js/nouislider.js') }}"></script>
   <!-- Custom js -->
   <script src="{{ url('/assets/js/custom.js') }}"></script>  
+  <!-- Sweeralert JS -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  
+   @if(session('eliminar') == 'ok')
+      <script>
+         Swal.fire(
+              '¡Datos Actualizados!',
+              'Sus datos de facturación han sido actualizados correctamente :3',
+              'success'
+            )
+      </script>
+  @elseif(session('eliminar') == 'pago')
+      <script>
+         Swal.fire(
+              '¡Pedido Realizado!',
+              'Gracias por confiar en nosotros :3',
+              'success'
+            )
+      </script>
+  
+   @endif
   
 
   </body>

@@ -63,7 +63,7 @@ Route::get('/user-form', [UserController::class, 'getForm'] );
 //
 Route::post('/user-form-post', [UserController::class, 'postForm'] );
 //
-Route::get('/prueba', [CatalogController::class, 'prueba']);
+//Route::get('/prueba', [CatalogController::class, 'prueba']);
 //
 Route::get('/login-no', [CatalogController::class, 'loginNo']);
 //
@@ -74,6 +74,12 @@ Route::post('/delete-product', [CatalogController::class, 'deleteProduct']);
 Route::get('/end-checkout', [CatalogController::class, 'postCheckout']);
 //
 Route::post('/search-product', [CatalogController::class, 'productSearch']);
+//
+Route::get('/confirmation/{product_id}', [CatalogController::class, 'getConfirmation']);
+//
+Route::post('/post-confirmation', [CatalogController::class, 'postConfirmation']);
+
+
 
 Auth::routes();
 

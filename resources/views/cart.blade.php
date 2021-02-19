@@ -194,6 +194,7 @@
                         <th>Producto</th>
                         <th>Descripción</th>
                         <th>Precio</th>
+                        <th>Eliminar </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -204,6 +205,7 @@
                         <td><a class="aa-cart-title" href="{{ url('/product-detail/' . $product->product_id) }}">{{$product->product_name}}</a></td>
                         <td>{{$product->product_desc_short}}</td>
                         <td>${{$product->product_price}}</td>
+                        <td><a href="{{ url('/confirmation/' . $product->product_id) }}"><img style="max-height: 30px; max-width: 30px;" src="{{ url('/assets/img/delete.png')}}" alt=""></a></td>
                       </tr>
                     @endforeach
                       </tbody>
@@ -312,6 +314,26 @@
    <script type="text/javascript" src="{{ url('/assets/js/nouislider.js') }}"></script>
    <!-- Custom js -->
    <script src="{{ url('/assets/js/custom.js') }}"></script> 
+  <!-- Sweeralert JS -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+   @if(session('eliminar') == 'ok')
+      <script>
+         Swal.fire(
+              '¡Eliminado!',
+              'El producto ha sido eliminado del carrito ;(',
+              'success'
+            )
+      </script>
+  @elseif(session('eliminar') == 'carrito')
+      <script>
+         Swal.fire(
+              '¡Error!',
+              'No tiene productos en el carrito ;(',
+              'error'
+            )
+      </script>
+   @endif
 
   </body>
 </html>

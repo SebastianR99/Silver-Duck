@@ -188,7 +188,7 @@
              <div class="row">
                <div class="col-md-8">
                  <div class="aa-contact-address-left">
-                   <form class="comments-form contact-form" action="{{url ('/user-form-post') }}" method='POST'>
+                   <form class="comments-form contact-form formulario-eliminar" action="{{url ('/user-form-post') }}" method='POST'>
                    @csrf
                    <div class="row">
                       <div class="col-md-6">
@@ -256,8 +256,8 @@
 
   <!-- footer -->  
   <footer id="aa-footer">
-    <!-- footer bottom -->
-    <div class="aa-footer-top">
+     <!-- footer bottom -->
+     <div class="aa-footer-top">
      <div class="container">
         <div class="row">
         <div class="col-md-12">
@@ -268,9 +268,9 @@
                   <h3>Menú Principal</h3>
                   <ul class="aa-footer-nav">
                     <li><a href="{{ url('/') }}">Inicio</a></li>
-                    <li><a href="#">Our Products</a></li>
+                    <li><a href="{{ url('/product') }}">Catálogo completo</a></li>
                     <li><a href="{{ url('/about') }}">Sobre nosotros</a></li>
-                    <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+                    <li><a href="{{ url('/contact') }}">Contactanos</a></li>
                   </ul>
                 </div>
               </div>
@@ -279,15 +279,11 @@
                   <div class="aa-footer-widget">
                     <h3>Contact Us</h3>
                     <address>
-                      <p> 25 Astor Pl, NY 10003, USA</p>
-                      <p><span class="fa fa-phone"></span>+1 212-982-4589</p>
-                      <p><span class="fa fa-envelope"></span>dailyshop@gmail.com</p>
+                      <p> Torobajo - Calle 18 Carrera 50</p>
+                      <p><span class="fa fa-phone"></span> (+057) 7244309–7311449</p>
+                      <p><span class="fa fa-envelope"></span>silverduck@gmail.com</p>
                     </address>
                     <div class="aa-footer-social">
-                      <a href="#"><span class="fa fa-facebook"></span></a>
-                      <a href="#"><span class="fa fa-twitter"></span></a>
-                      <a href="#"><span class="fa fa-google-plus"></span></a>
-                      <a href="#"><span class="fa fa-youtube"></span></a>
                     </div>
                   </div>
                 </div>
@@ -298,8 +294,7 @@
       </div>
      </div>
     </div>
-  </footer>
-  <!-- / footer -->
+    <!-- footer-bottom -->
   <!-- Login Modal -->  
   <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -344,6 +339,31 @@
   <script type="text/javascript" src="{{ url('/assets/js/nouislider.js') }}"></script>
   <!-- Custom js -->
   <script src="{{ url('/assets/js/custom.js') }}"></script>  
+  <!-- Sweeralert JS -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+  <script>
+      $('.formulario-eliminar').submit(function(e)
+      {
+              e.preventDefault();
+
+                Swal.fire({
+                title: '¿Está Segur@?',
+                text: "¿Desea actualizar su información con estos datos?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí',
+                cancelButtonText: 'Cancelar',
+                 }).then((result) => {
+                if (result.isConfirmed) {
+                  this.submit();
+                }
+              })
+      });
+         
+  </script>
   
 
   </body>

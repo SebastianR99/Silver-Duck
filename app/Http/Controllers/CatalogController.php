@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 use App\Models\Products;
+use GrahamCampbell\ResultType\Success;
 use Illuminate\Support\Facades\Auth;
 use PhpParser\Node\Expr\New_;
 
@@ -149,6 +150,17 @@ class CatalogController extends Controller
                                   ->where('carts.cart_bought',false)
                                   ->get();
 
+        $car = DB::table('carts')->join('users','carts.cart_user','=','users.id')
+                    ->join('products','carts.cart_product','=','products.product_id')
+                    ->select('products.*','users.*')
+                    ->where('carts.cart_user',$identificacion)
+                    ->where('carts.cart_bought',false)->count();
+
+        if($car == 0)
+        {
+            return back()->with('eliminar','carrito');
+        }
+        
         $subtotal = 0;
         foreach($pago as $ciclo)
         {
@@ -156,7 +168,8 @@ class CatalogController extends Controller
         }
         $iva = intval($subtotal*0.19);
         $total=intval($iva+$subtotal);
-        
+       
+
         return view('checkout',array('arrayPago'=>$pago),array(
             'subtotal'=>$subtotal,
             'iva'=>$iva,
@@ -223,12 +236,12 @@ class CatalogController extends Controller
             }
             else
             {
-                return back()->with('error','Producto no disponible');
+                return back()->with('eliminar','ok');
             }
         }
         DB::table('carts')->where('cart_user',$identificacion)
-        ->update(['cart_bought'=>true]);
-        return redirect( url('/account') )->with('success','Su pedido ha sido realizado con éxito   :3');
+                          ->update(['cart_bought'=>true]);
+        return redirect( url('/account') )->with('eliminar','pago');
     }
 
     public function productSearch(Request $request)
@@ -241,4 +254,20 @@ class CatalogController extends Controller
         return view('search-product',array('arrayProducts'=>$products),array('car'=>$car));
 
     }
+    
+    //
+    public function getConfirmation($product_id)
+    {
+        $product = Products::where('product_id', $product_id)
+                           ->first();
+      
+        return view('confirmation',array('product'=>$product));
+    }
+     //
+     public function postConfirmation(Request $request)
+     {
+        $producto = $request->product;
+        DB::table('carts')->where('cart_product',$producto)->delete();
+        return redirect(url('/cart'))->with('eliminar','ok');
+     }
 }
