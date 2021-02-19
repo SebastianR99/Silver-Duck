@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Silver Duck | Login</title>
+    <title>Silver Duck | Authentication</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
