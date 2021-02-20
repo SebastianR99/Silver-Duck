@@ -265,7 +265,7 @@
                 @foreach ($arraySimilars as $key => $similars)
                 <li>
                   <figure>
-                    <a class="aa-product-img" href="{{ url('/product-detail/' . $similars->product_id) }}"><img style="width: 100%; height: 90%;"  src=" {{ $similars->product_pic1 }} " alt="polo shirt img"></a>
+                    <a class="aa-product-img" href="{{ url('/product-detail/' . $similars->product_id) }}"><img style="width: 90%; height: 90%;"  src=" {{ $similars->product_pic1 }} " alt="polo shirt img"></a>
                      <figcaption>
                       <h4 class="aa-product-title"><a href="#"> {{ $similars->product_name }} </a></h4>
                       <span class="aa-product-price"> ${{ $similars->product_price }} </span>

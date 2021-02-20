@@ -254,7 +254,7 @@
               <div class="col-md-5 no-padding">                
                 <div class="aa-promo-left">
                   <div class="aa-promo-banner">                    
-                    <img src=" {{ url('/assets/img/promo-banner-1.jpg') }}" alt="img">                    
+                    <img src="https://image.freepik.com/vector-gratis/conjunto-ropa-mujer-plana_1284-16597.jpg" alt="img">                    
                     <div class="aa-prom-content">
                       <span>75% Off</span>
                       <h4><a href="{{ url('/Women/product-women')}}">For Women</a></h4>                      
@@ -267,7 +267,7 @@
                 <div class="aa-promo-right">
                   <div class="aa-single-promo-right">
                     <div class="aa-promo-banner">                      
-                      <img src="" alt="img">                      
+                      <img src="https://s3.amazonaws.com/mercado-ideas/wp-content/uploads/sites/2/2019/09/27194828/bigstock-como-combinar-ropa-hombre.jpg" alt="img">                      
                       <div class="aa-prom-content">
                         <span>Exclusive Item</span>
                         <h4><a href="{{ url('/Men/product-men')}}">For Men</a></h4>                        
@@ -276,7 +276,7 @@
                   </div>
                   <div class="aa-single-promo-right">
                     <div class="aa-promo-banner">                      
-                      <img src="" alt="img">                      
+                      <img src="https://i.pinimg.com/originals/01/db/ff/01dbff9d6403b0cb6163b08d269d3eab.jpg" alt="img">                      
                       <div class="aa-prom-content">
                         <span>Sale Off</span>
                         <h4><a href="{{ url('/Women/product-women-formal')}}">For Formal Women</a></h4>                        
@@ -285,16 +285,16 @@
                   </div>
                   <div class="aa-single-promo-right">
                     <div class="aa-promo-banner">                      
-                      <img src="" alt="img">                      
+                      <img src="https://ae01.alicdn.com/kf/H0cfc7c918c574e1284020b1c62ce39d5c/Traje-deportivo-para-hombre-chaqueta-de-culturismo-pantalones-deportivos-medias-de-baloncesto-ropa-de-gimnasio-conjunto.jpg_q50.jpg" alt="img">                      
                       <div class="aa-prom-content">
                         <span>New Arrivals</span>
-                        <h4><a href="{{ url('/Men/product-men-sport')}}>For Sporty Men</a></h4>                        
+                        <h4><a href="{{ url('/Men/product-men-sport')}}">For Sporty Men</a></h4>                        
                       </div>
                     </div>
                   </div>
                   <div class="aa-single-promo-right">
                     <div class="aa-promo-banner">                      
-                      <img src="" alt="img">                      
+                      <img src="https://i.pinimg.com/736x/8e/20/62/8e20626464ee04f90f2c4abf9ae7bc72.jpg" alt="img">                      
                       <div class="aa-prom-content">
                         <span>25% Off</span>
                         <h4><a href=" {{ url('/product') }}">For Women and Men</a></h4>                        
@@ -331,10 +331,10 @@
                         <!-- start single product item -->
                         <li>
                           <figure>
-                            <a class="aa-product-img" href="{{ url('/product-detail/' . $arrayProducts[12]->product_id) }}"><img src=" {{ $arrayProducts[12]->product_pic1 }}" alt="polo shirt img"></a>
+                            <a class="aa-product-img" href="{{ url('/product-detail/' . $arrayProducts[12]->product_id) }}"><img style="max-width: 350px; max-height: 300px;" src=" {{ $arrayProducts[12]->product_pic1 }}" alt="polo shirt img"></a>
                               <figcaption>
-                              <h4 class="aa-product-title"><a href="#">{{ $arrayProducts[12]->product_name }}</a></h4>
-                              <span class="aa-product-price">{{ $arrayProducts[12]->product_price }}</span>
+                              <h4 class="aa-product-title"><a>{{ $arrayProducts[12]->product_name }}</a></h4>
+                              <span class="aa-product-price">${{ $arrayProducts[12]->product_price }}</span>
                             </figcaption>
                           </figure>                        
                           <!-- product badge -->
@@ -343,10 +343,10 @@
                         <!-- start single product item -->
                         <li>
                           <figure>
-                            <a class="aa-product-img" href="{{ url('/product-detail/' . $arrayProducts[13]->product_id) }}"><img src=" {{ $arrayProducts[13]->product_pic1 }}" alt="polo shirt img"></a>
+                            <a class="aa-product-img" href="{{ url('/product-detail/' . $arrayProducts[13]->product_id) }}"><img style="max-width: 350px; max-height: 300px;" src=" {{ $arrayProducts[13]->product_pic1 }}" alt="polo shirt img"></a>
                              <figcaption>
-                              <h4 class="aa-product-title"><a href="#">{{ $arrayProducts[13]->product_name }}</a></h4>
-                              <span class="aa-product-price">{{ $arrayProducts[13]->product_price }}</span>
+                              <h4 class="aa-product-title"><a>{{ $arrayProducts[13]->product_name }}</a></h4>
+                              <span class="aa-product-price">${{ $arrayProducts[13]->product_price }}</span>
                             </figcaption>
                           </figure>                         
                           <!-- product badge -->
@@ -355,20 +355,20 @@
                         <!-- start single product item -->
                         <li>
                           <figure>
-                            <a class="aa-product-img" href="{{ url('/product-detail/' . $arrayProducts[14]->product_id) }}"><img src=" {{ $arrayProducts[14]->product_pic1 }}" alt="polo shirt img"></a>
+                            <a class="aa-product-img" href="{{ url('/product-detail/' . $arrayProducts[14]->product_id) }}"><img style="max-width: 350px; max-height: 300px;" src=" {{ $arrayProducts[14]->product_pic1 }}" alt="polo shirt img"></a>
                              <figcaption>
-                              <h4 class="aa-product-title"><a href="#">{{ $arrayProducts[14]->product_name }}</a></h4>
-                              <span class="aa-product-price">{{ $arrayProducts[14]->product_price}}</span>
+                              <h4 class="aa-product-title"><a>{{ $arrayProducts[14]->product_name }}</a></h4>
+                              <span class="aa-product-price">${{ $arrayProducts[14]->product_price}}</span>
                             </figcaption>
                           </figure>                         
                         </li>
                         <!-- start single product item -->
                         <li>
                           <figure>
-                            <a class="aa-product-img" href="{{ url('/product-detail/' . $arrayProducts[15]->product_id) }}"><img src=" {{ $arrayProducts[15]->product_pic1 }}" alt="polo shirt img"></a>
+                            <a class="aa-product-img" href="{{ url('/product-detail/' . $arrayProducts[15]->product_id) }}"><img style="max-width: 350px; max-height: 300px;" src=" {{ $arrayProducts[15]->product_pic1 }}" alt="polo shirt img"></a>
                             <figcaption>
-                              <h4 class="aa-product-title"><a href="#">{{ $arrayProducts[15]->product_name }}</a></h4>
-                              <span class="aa-product-price">{{ $arrayProducts[15]->product_price }}</span>
+                              <h4 class="aa-product-title"><a >{{ $arrayProducts[15]->product_name }}</a></h4>
+                              <span class="aa-product-price">${{ $arrayProducts[15]->product_price }}</span>
                             </figcaption>
                           </figure>                          
                           <!-- product badge -->
@@ -382,7 +382,7 @@
                               <div class="col-md-12">        
                                 <div class="row">
                                   <div class="aa-banner-area">
-                                  <a href="#"><img style='padding-bottom:10px;' src=" {{ url('/assets/img/fashion-banner.jpg') }}" alt="fashion banner img"></a>
+                                  <a ><img style='padding-bottom:10px;' src=" {{ url('/assets/img/fashion-banner.jpg') }}" alt="fashion banner img"></a>
                                 </div>
                                 </div>
                               </div>
@@ -398,7 +398,7 @@
                               <div class="col-md-12">        
                                 <div class="row">
                                   <div class="aa-banner-area">
-                                  <a href="#"><img style='padding-bottom:10px;' src=" {{ url('/assets/img/fashion-banner.jpg') }}" alt="fashion banner img"></a>
+                                  <a><img style='padding-bottom:10px;' src=" {{ url('/assets/img/fashion-banner.jpg') }}" alt="fashion banner img"></a>
                                 </div>
                                 </div>
                               </div>
@@ -414,7 +414,7 @@
                               <div class="col-md-12">        
                                 <div class="row">
                                   <div class="aa-banner-area">
-                                  <a href="#"><img style='padding-bottom:10px;' src=" {{ url('/assets/img/fashion-banner.jpg') }}" alt="fashion banner img"></a>
+                                  <a><img style='padding-bottom:10px;' src=" {{ url('/assets/img/fashion-banner.jpg') }}" alt="fashion banner img"></a>
                                 </div>
                                 </div>
                               </div>
@@ -430,7 +430,7 @@
                               <div class="col-md-12">        
                                 <div class="row">
                                   <div class="aa-banner-area">
-                                  <a href="#"><img style='padding-bottom:10px;' src=" {{ url('/assets/img/fashion-banner.jpg') }}" alt="fashion banner img"></a>
+                                  <a><img style='padding-bottom:10px;' src=" {{ url('/assets/img/fashion-banner.jpg') }}" alt="fashion banner img"></a>
                                 </div>
                                 </div>
                               </div>
@@ -448,10 +448,10 @@
                         <!-- start single product item -->
                         <li>
                           <figure>
-                            <a class="aa-product-img" href="{{ url('/product-detail/' . $arrayProducts[0]->product_id) }}"><img src=" {{ $arrayProducts[0]->product_pic1 }}" alt="polo shirt img"></a>
+                            <a class="aa-product-img" href="{{ url('/product-detail/' . $arrayProducts[0]->product_id) }}"><img style="max-width: 350px; max-height: 300px;" src=" {{ $arrayProducts[0]->product_pic1 }}" alt="polo shirt img"></a>
                             <figcaption>
-                              <h4 class="aa-product-title"><a href="#">{{ $arrayProducts[0]->product_name }}</a></h4>
-                              <span class="aa-product-price">{{ $arrayProducts[0]->product_price }}</span>
+                              <h4 class="aa-product-title"><a>{{ $arrayProducts[0]->product_name }}</a></h4>
+                              <span class="aa-product-price">${{ $arrayProducts[0]->product_price }}</span>
                             </figcaption>
                           </figure>                          
                           <!-- product badge -->
@@ -460,10 +460,10 @@
                         <!-- start single product item -->
                         <li>
                           <figure>
-                            <a class="aa-product-img" href="{{ url('/product-detail/' . $arrayProducts[1]->product_id) }}"><img src=" {{ $arrayProducts[1]->product_pic1 }}" alt="polo shirt img"></a>
+                            <a class="aa-product-img" href="{{ url('/product-detail/' . $arrayProducts[1]->product_id) }}"><img style="max-width: 350px; max-height: 300px;" src=" {{ $arrayProducts[1]->product_pic1 }}" alt="polo shirt img"></a>
                             <figcaption>
-                              <h4 class="aa-product-title"><a href="#">{{ $arrayProducts[1]->product_name }}</a></h4>
-                              <span class="aa-product-price">{{ $arrayProducts[1]->product_price }}</span>
+                              <h4 class="aa-product-title"><a>{{ $arrayProducts[1]->product_name }}</a></h4>
+                              <span class="aa-product-price">${{ $arrayProducts[1]->product_price }}</span>
                             </figcaption>
                           </figure>                          
                           <!-- product badge -->
@@ -472,10 +472,10 @@
                         <!-- start single product item -->
                         <li>
                           <figure>
-                            <a class="aa-product-img" href="{{ url('/product-detail/' . $arrayProducts[2]->product_id) }}"><img src=" {{ $arrayProducts[2]->product_pic1 }}" alt="polo shirt img"></a>
+                            <a class="aa-product-img" href="{{ url('/product-detail/' . $arrayProducts[2]->product_id) }}"><img style="max-width: 350px; max-height: 300px;" src=" {{ $arrayProducts[2]->product_pic1 }}" alt="polo shirt img"></a>
                             <figcaption>
-                              <h4 class="aa-product-title"><a href="#">{{ $arrayProducts[2]->product_name }}</a></h4>
-                              <span class="aa-product-price">{{ $arrayProducts[2]->product_price }}</span>
+                              <h4 class="aa-product-title"><a>{{ $arrayProducts[2]->product_name }}</a></h4>
+                              <span class="aa-product-price">${{ $arrayProducts[2]->product_price }}</span>
                             </figcaption>
                           </figure>                          
                           <!-- product badge -->
@@ -486,7 +486,7 @@
                           <figure>
                             <a class="aa-product-img" href="{{ url('/product-detail/' . $arrayProducts[3]->product_id) }}"><img src=" {{ $arrayProducts[3]->product_pic1 }}" alt="polo shirt img"></a>
                             <figcaption>
-                              <h4 class="aa-product-title"><a href="#">{{ $arrayProducts[3]->product_name }}</a></h4>
+                              <h4 class="aa-product-title"><a>{{ $arrayProducts[3]->product_name }}</a></h4>
                               <span class="aa-product-price">{{ $arrayProducts[3]->product_price }}</span>
                             </figcaption>
                           </figure>                          
@@ -501,7 +501,7 @@
                               <div class="col-md-12">        
                                 <div class="row">
                                   <div class="aa-banner-area">
-                                  <a href="#"><img style='padding-bottom:10px;' src=" {{ url('/assets/img/fashion-banner.jpg') }}" alt="fashion banner img"></a>
+                                  <a><img style='padding-bottom:10px;' src=" {{ url('/assets/img/fashion-banner.jpg') }}" alt="fashion banner img"></a>
                                 </div>
                                 </div>
                               </div>
@@ -518,7 +518,7 @@
                               <div class="col-md-12">        
                                 <div class="row">
                                   <div class="aa-banner-area">
-                                  <a href="#"><img style='padding-bottom:10px;' src=" {{ url('/assets/img/fashion-banner.jpg') }}" alt="fashion banner img"></a>
+                                  <a><img style='padding-bottom:10px;' src=" {{ url('/assets/img/fashion-banner.jpg') }}" alt="fashion banner img"></a>
                                 </div>
                                 </div>
                               </div>
@@ -534,7 +534,7 @@
                               <div class="col-md-12">        
                                 <div class="row">
                                   <div class="aa-banner-area">
-                                  <a href="#"><img style='padding-bottom:10px;' src=" {{ url('/assets/img/fashion-banner.jpg') }}" alt="fashion banner img"></a>
+                                  <a><img style='padding-bottom:10px;' src=" {{ url('/assets/img/fashion-banner.jpg') }}" alt="fashion banner img"></a>
                                 </div>
                                 </div>
                               </div>
@@ -550,7 +550,7 @@
                               <div class="col-md-12">        
                                 <div class="row">
                                   <div class="aa-banner-area">
-                                  <a href="#"><img style='padding-bottom:10px;' src=" {{ url('/assets/img/fashion-banner.jpg') }}" alt="fashion banner img"></a>
+                                  <a><img style='padding-bottom:10px;' src=" {{ url('/assets/img/fashion-banner.jpg') }}" alt="fashion banner img"></a>
                                 </div>
                                 </div>
                               </div>

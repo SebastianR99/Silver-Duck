@@ -215,16 +215,11 @@
                       <figure>
                         <a class="" href="{{ url('/product-detail/' . $products->product_id) }}"><img style="width: 90% fit-content; height: 90%;" src="{{$products->product_pic1}}" alt="polo shirt img"></a>
                         <figcaption>
-                          <h4 class="aa-product-title"><a href="#">{{ $products->product_name }}</a></h4>
-                          <span class="aa-product-price">{{ $products->product_price }}</span>
+                          <h4 class="aa-product-title"><a href="{{ url('/product-detail/' . $products->product_id) }}">{{ $products->product_name }}</a></h4>
+                          <span class="aa-product-price">${{ $products->product_price }}</span>
                           <p class="aa-product-descrip">{{ $products->product_desc_short }}</p>
                         </figcaption>
-                      </figure>                         
-                      <div class="aa-product-hvr-content">
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
-                      </div>
+                      </figure>                       
                    <!-- product badge -->
                       <span class="aa-badge aa-sale" href="#">SALE!</span>
                     </li>
