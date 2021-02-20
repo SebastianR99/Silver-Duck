@@ -111,7 +111,7 @@
                 <a class="aa-cart-link" href="{{ url('/cart') }}">
                   <span class="fa fa-shopping-basket"></span>
                   <span class="aa-cart-title">CARRITO DE COMPRAS</span>
-                 <span class="aa-cart-notify">3</span>
+                 <span class="aa-cart-notify">0</span>
                 </a>
               </div>
               <!-- / cart box -->
@@ -296,9 +296,10 @@
                   </div>
                   <h4>Métodos de pago</h4>
                   <div class="aa-payment-method">  
-                    <label for="cashdelivery"><input type="radio" id="cashdelivery" name="optionsRadios"> Cash on Delivery </label>
-                    <label for="paypal"><input type="radio" id="paypal" name="optionsRadios" checked> Via Paypal </label>
-                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark"> 
+                    <label for="cashdelivery"><input type="radio" id="cashdelivery" name="optionsRadios"> Pago contra entrega </label>
+		    <img style="margin-bottom: 5px; margin-top: 5px;" src="https://www.sttikup.com/img/cms/banner-pago-contraentrega-CMS.jpg" border="0" alt="PayPal Acceptance Mark"> 
+                    <label for="paypal"><input type="radio" id="paypal" name="optionsRadios">Transferencia Bancaria </label>
+                    <img style="max-width=2px; max-height=2px; margin-bottom: 5px;" src="https://d3uir0eo9qeeuq.cloudfront.net/blog/wp-content/uploads/2017/09/12153951/transferencia-bancaria-por-internet.jpg" border="0" alt="PayPal Acceptance Mark"> 
                     <button class="aa-browse-btn" type="submit" > Realizar pedido</button>                    
                   </div>
                 </div>

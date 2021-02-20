@@ -199,17 +199,6 @@
         <div class="col-lg-9 col-md-9 col-sm-8 col-md-push-3">
           <div class="aa-product-catg-content">
             <div class="aa-product-catg-head">
-              <div class="aa-product-catg-head-left">
-                <form action="" class="aa-sort-form">
-                  <label for="">Sort by</label>
-                  <select name="">
-                    <option value="1" selected="Default">Default</option>
-                    <option value="2">Name</option>
-                    <option value="3">Price</option>
-                    <option value="4">Date</option>
-                  </select>
-                </form>
-              </div>
               <div class="aa-product-catg-head-right">
                 <a id="grid-catg" href="#"><span class="fa fa-th"></span></a>
                 <a id="list-catg" href="#"><span class="fa fa-list"></span></a>
@@ -222,18 +211,12 @@
                   <li>
                     <figure>
                      <a class="" href="{{ url('/product-detail/' . $products->product_id) }}"><img style="width: 90% fit-content; height: 90%;" src="{{$products->product_pic1}}" alt="polo shirt img"></a>
-                     <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                       <figcaption>
-                       <h4 class="aa-product-title"><a href="#">{{ $products->product_name }}</a></h4>
-                       <span class="aa-product-price">{{ $products->product_price }}</span>
+                       <h4 class="aa-product-title"><a>{{ $products->product_name }}</a></h4>
+                       <span class="aa-product-price">${{ $products->product_price }}</span>
                         <p class="aa-product-descrip">{{ $products->product_desc_short }}</p>
                      </figcaption>
                     </figure>                         
-                    <div class="aa-product-hvr-content">
-                     <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                      <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                      <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
-                   </div>
                    <!-- product badge -->
                     <span class="aa-badge aa-sale" href="#">SALE!</span>
                  </li>
@@ -322,27 +305,6 @@
               </div>
               <!-- / quick view modal -->   
             </div>
-            <div class="aa-product-catg-pagination">
-              <nav>
-                <ul class="pagination">
-                  <li>
-                    <a href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                  </li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li>
-                    <a href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-4 col-md-pull-9">
@@ -357,29 +319,16 @@
             </div>
             <!-- single sidebar -->
             <div class="aa-sidebar-widget">
-              <h3>Tags</h3>
-              <div class="tag-cloud">
-                <a href="#">Fashion</a>
-                <a href="#">Ecommerce</a>
-                <a href="#">Shop</a>
-                <a href="#">Hand Bag</a>
-                <a href="#">Laptop</a>
-                <a href="#">Head Phone</a>
-                <a href="#">Pen Drive</a>
-              </div>
-            </div>
-            <!-- single sidebar -->
-            <div class="aa-sidebar-widget">
               <h3>Más populares</h3>
               <div class="aa-recently-views">
                 <ul>
                   @foreach ($arrayProducts as $key => $products)
                     @if ($products->product_stock <= 3)
                       <li>
-                        <a href="#" class="aa-cartbox-img"><img alt="img" src="{{ $products->product_pic1 }}"></a>
+                        <a href="{{url('/product-detail/'.$products->product_id)}}" class="aa-cartbox-img"><img alt="img" src="{{ $products->product_pic1 }}"></a>
                         <div class="aa-cartbox-info">
-                          <h4><a href="#"> {{ $products->product_name }} </a></h4>
-                         <p> {{ $products->product_price }} </p>
+                          <h4><a> {{ $products->product_name }} </a></h4>
+                         <p> ${{ $products->product_price }} </p>
                         </div>                    
                       </li>       
                     @endif

@@ -113,7 +113,7 @@
                 <a class="aa-cart-link" href=" {{ url('/cart') }} ">
                   <span class="fa fa-shopping-basket"></span>
                   <span class="aa-cart-title">CARRITO DE COMPRAS</span>
-                 <span class="aa-cart-notify">3</span>
+                 <span class="aa-cart-notify">0</span>
                 </a>
               </div>
               <!-- / cart box -->
